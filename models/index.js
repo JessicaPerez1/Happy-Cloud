@@ -1,3 +1,7 @@
+// module.exports = {
+//   Post: require("./post"),
+// };
+
 module.exports = {
-  Post: require("./post")
+  User: require("./User"),
 };
