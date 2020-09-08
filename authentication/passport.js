@@ -19,4 +19,4 @@ passport.use(
       })
       .catch(err => cb(err));
     }
- });
+ })
