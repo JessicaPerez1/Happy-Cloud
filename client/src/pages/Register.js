@@ -25,7 +25,7 @@ const Register = () => {
     e.preventDefault();
     console.log("you've signed up");
     doSignup();
-    history.push("/");
+    history.push("/login");
   };
   return (
     <div>
