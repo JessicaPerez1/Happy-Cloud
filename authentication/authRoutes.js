@@ -1,11 +1,11 @@
-const router = require("express").Router();
+const Router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
 const userController = require("../controllers/userController");
 
 //POST LOGIN
 
-router.post("/login", function (req, res) {
+Router.post("/login", function (req, res) {
   passport.authenticate("local", { session: false }, (err, user, info) => {
     console.log(user);
     if (err || !user) {
@@ -25,4 +25,4 @@ router.post("/login", function (req, res) {
   })(req, res);
 });
 Router.post("/register", userController.createNew);
-module.exports = router;
+module.exports = Router;

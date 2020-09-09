@@ -32,10 +32,10 @@ const UnauthenticatedApp = () => {
 
     console.log(data);
 
-    // dispatch({
-    //   type: LOGIN,
-    //   user: data
-    // })
+    dispatch({
+      type: LOGIN,
+      user: data,
+    });
   };
 
   const handleSubmit = (e) => {
