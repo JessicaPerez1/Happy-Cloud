@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
+const userController = require("../controllers/userController");
 
 //POST LOGIN
 
@@ -16,9 +17,11 @@ router.post("/login", function (req, res) {
       if (err) {
         res.send(err);
       }
-      const token = jwt.sign(user, "superSecret");
-      return res.json({ user, token });
+      const token = jwt.sign(user.toJSON(), "superSecret");
+      const { email } = user;
+      return res.json({ email, token });
     });
   })(req, res);
 });
+Router.post("/register", userController.createNew);
 module.exports = router;
