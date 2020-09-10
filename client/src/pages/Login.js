@@ -37,6 +37,9 @@ const Login = () => {
       alert("Message can not be blank");
     } else if (passwordRef === "") {
       alert("Password can not be blank");
+      //add and else if statement if the user email and info dont exist in the database
+      // } else if (emailRef || passwordRef !== userInfo) {
+      //   alert("Please signup to join Happy Cloud!");
     } else {
       alert("success");
     }
@@ -46,14 +49,14 @@ const Login = () => {
   };
   return (
     <div>
-      <p>Please enter your information to login:</p>
+      <p>Please enter your information to L:</p>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="email" ref={emailRef} />
         <input type="text" placeholder="password" ref={passwordRef} />
         <button type="submit">Submit</button>
       </form>
       <p>
-        link to signup<Link to="/register">here</Link>.
+        Not registered yet?<Link to="/register"> Register now </Link>.
       </p>
     </div>
   );

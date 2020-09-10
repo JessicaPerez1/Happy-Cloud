@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import Signup from "../components/Signup";
 
 const Register = () => {
   const regEmailRef = useRef();
@@ -14,11 +15,6 @@ const Register = () => {
     });
 
     console.log(data);
-
-    // dispatch({
-    //   type: LOGIN,
-    //   user: data,
-    // });
   };
 
   const handleSignup = (e) => {
@@ -29,12 +25,7 @@ const Register = () => {
   };
   return (
     <div>
-      <p>Please enter your information to signup:</p>
-      <form onSubmit={handleSignup}>
-        <input type="text" placeholder="email" ref={regEmailRef} />
-        <input type="text" placeholder="password" ref={regPasswordRef} />
-        <button type="submit">Submit</button>
-      </form>
+      <Signup />
     </div>
   );
 };
