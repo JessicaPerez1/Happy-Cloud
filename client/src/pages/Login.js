@@ -4,6 +4,7 @@ import axios from "axios";
 import { LOGIN } from "../context/actions";
 import { useGlobalContext } from "../context/GlobalContext";
 import Register from "./Register";
+import Profile from "../pages/Profile";
 
 const Login = () => {
   const [state, dispatch] = useGlobalContext();
