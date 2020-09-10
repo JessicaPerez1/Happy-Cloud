@@ -1,22 +1,16 @@
 import React, { createContext, useReducer, useContext } from "react";
-import {
-  LOGIN,
-  LOGOUT,
-  SET_CURRENT_POST,
-  UPDATE_POSTS,
-  ADD_POST,
-} from "./actions";
+import { SET_CURRENT_POST, UPDATE_POSTS, ADD_POST } from "./actions";
 
-const StoreContext = createContext();
-const { Provider } = StoreContext;
+const PostContext = createContext();
+const { Provider } = PostContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case SET_CURRENT_POST:
-      return {
-        ...state,
-        currentPost: action.post,
-      };
+    // case SET_CURRENT_POST:
+    //   return {
+    //     ...state,
+    //     currentPost: action.post,
+    //   };
 
     case UPDATE_POSTS:
       return {
@@ -43,7 +37,7 @@ const reducer = (state, action) => {
   }
 };
 
-const StoreProvider = ({ value = [], ...props }) => {
+const PostProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, {
     posts: [],
     currentPost: {
@@ -57,8 +51,8 @@ const StoreProvider = ({ value = [], ...props }) => {
   return <Provider value={[state, dispatch]} {...props} />;
 };
 
-const useStoreContext = () => {
-  return useContext(StoreContext);
+const usePostContext = () => {
+  return useContext(PostContext);
 };
 
-export { StoreProvider, useStoreContext };
+export { PostProvider, usePostContext };

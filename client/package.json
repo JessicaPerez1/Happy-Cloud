@@ -2,9 +2,10 @@
   "name": "cms",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:4000/",
+  "proxy": "http://localhost:4001/",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "axios": "^0.18.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",

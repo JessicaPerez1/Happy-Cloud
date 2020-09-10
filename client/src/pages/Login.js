@@ -22,8 +22,11 @@ const Login = () => {
       user: data,
     });
   };
-  // //setitem to LOCALSTORAGE
-  //   localStorage.setItem("")
+  //set item to LOCALSTORAGE
+  //function setLocalStorage (event) {
+  //localStorage.setItem({"User email": emailRef, "User token": token});
+  //setValue(event.target);
+  //}
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,6 +34,7 @@ const Login = () => {
     console.log("you've logged in");
     history.push("/profile");
   };
+
   return (
     <div>
       <p>Please enter your information to login:</p>

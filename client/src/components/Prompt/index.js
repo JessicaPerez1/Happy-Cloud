@@ -81,7 +81,7 @@ function Prompt() {
     </Container>
   );
 
-  //submit button onClick => handleFormSubmit
+  //submit button onClick => handleFormSubmit, save info to db
   //include DailyPost component (generated card)
 }
 
