@@ -12,18 +12,9 @@ function App() {
   const [state, dispatch] = useGlobalContext();
 
   return (
-    <Router>
-      <Switch>
-        <Route exact path={["/", "/welcome"]} component={Welcome} />
-        <Login>
-          <div className="App">
-            {state.user.token ? <AuthenticatedApp /> : <UnauthenticatedApp />}
-          </div>
-        </Login>
-        <Route exact path="/profile/:id" component={Profile} />
-        <Route exact path="/history/:id" component={History} />
-      </Switch>
-    </Router>
+    <div className="App">
+      {state.user.token ? <AuthenticatedApp /> : <UnauthenticatedApp />}
+    </div>
   );
 }
 

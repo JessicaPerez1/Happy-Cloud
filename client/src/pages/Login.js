@@ -28,7 +28,6 @@ const Login = () => {
     e.preventDefault();
     doLogin();
     console.log("you've logged in");
-    history.push("/profile");
   };
   return (
     <div>
