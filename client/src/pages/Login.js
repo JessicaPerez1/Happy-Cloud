@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { LOGIN } from "../utils/actions";
 import { useGlobalContext } from "../utils/GlobalContext";
+import LoginForm from "../components/LoginForm";
 
 const Login = () => {
   const [state, dispatch] = useGlobalContext();
@@ -47,11 +48,7 @@ const Login = () => {
   return (
     <div>
       <p>Please enter your information to login:</p>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="email" ref={emailRef} />
-        <input type="text" placeholder="password" ref={passwordRef} />
-        <button type="submit">Submit</button>
-      </form>
+      <LoginForm />
       <p>
         link to signup<Link to="/register">here</Link>.
       </p>
