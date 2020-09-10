@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { GlobalProvider } from "./context/GlobalContext";
+import { GlobalProvider } from "./utils/GlobalContext";
 
 ReactDOM.render(
   <GlobalProvider>

@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import Prompt from "../components/Prompt";
 import WeekHistory from "../components/WeekHistory";
 import GenerateCloud from "../components/GenerateCloud";
-import { useGlobalContext } from "../context/GlobalContext";
-import { LOGOUT } from "../context/actions";
+import { useGlobalContext } from "../utils/GlobalContext";
+import { LOGOUT } from "../utils/actions";
 import { useHistory } from "react-router-dom";
 
 function Profile() {
@@ -28,7 +28,7 @@ function Profile() {
   }, []);
 
   // //Load all user's info from db
-  // function loadUserInfo() {}
+  function loadUserInfo() {}
 
   return (
     <div>

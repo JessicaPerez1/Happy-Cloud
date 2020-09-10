@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { Link, Router, Route, useHistory } from "react-router-dom";
 import axios from "axios";
-import { LOGIN } from "../context/actions";
-import { useGlobalContext } from "../context/GlobalContext";
+import { LOGIN } from "../utils/actions";
+import { useGlobalContext } from "../utils/GlobalContext";
 
 const Login = () => {
   const [state, dispatch] = useGlobalContext();
@@ -22,6 +22,8 @@ const Login = () => {
       user: data,
     });
   };
+  // //setitem to LOCALSTORAGE
+  //   localStorage.setItem("")
 
   const handleSubmit = (e) => {
     e.preventDefault();
