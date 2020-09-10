@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Prompt from "../components/Prompt";
 import WeekHistory from "../components/WeekHistory";
 import GenerateCloud from "../components/GenerateCloud";
-import Logout from "../components/Logout";
+
 import Nav from "../components/Nav";
 
 function Profile() {
@@ -16,7 +16,6 @@ function Profile() {
     <div>
       <Nav />
       <p>Congrats! You're logged in.</p>
-      <Logout />
     </div>
   );
   //jumbotron with personalized welcome message "welcome userName"
