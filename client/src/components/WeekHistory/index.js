@@ -1,2 +1,14 @@
 //most recent history of posts (within the past week)
-//add edit button here with ability to update most recent posts
+import React from "react";
+
+const DailyPost = () => {
+  return (
+    <div>
+      <h1>
+        This is the component where our daily post will live after it has been
+        submitted
+      </h1>
+    </div>
+  );
+};
+export default DailyPost;
