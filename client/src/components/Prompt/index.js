@@ -58,13 +58,9 @@ function Prompt() {
         style={{ backgroundColor: "#cfe8fc", height: "100vh" }}
       />
       {/* //question of the day card */}
-      <Card className={classes.root}>
+      <Card className="root">
         <CardContent>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          >
+          <Typography className="title" color="textSecondary" gutterBottom>
             Question of the Day
           </Typography>
           <Typography variant="body2" component="p">
@@ -73,7 +69,7 @@ function Prompt() {
         </CardContent>
       </Card>
       {/* //input area */}
-      <form className={classes.root} noValidate autoComplete="off">
+      <form className="root" noValidate autoComplete="off">
         <TextField
           id="outlined-basic"
           label="Your WORD here"
