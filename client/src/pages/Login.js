@@ -3,7 +3,6 @@ import { Link, Router, Route, useHistory } from "react-router-dom";
 import axios from "axios";
 import { LOGIN } from "../context/actions";
 import { useGlobalContext } from "../context/GlobalContext";
-import Register from "./Register";
 
 const Login = () => {
   const [state, dispatch] = useGlobalContext();
@@ -28,6 +27,7 @@ const Login = () => {
     e.preventDefault();
     doLogin();
     console.log("you've logged in");
+    history.push("/profile");
   };
   return (
     <div>
