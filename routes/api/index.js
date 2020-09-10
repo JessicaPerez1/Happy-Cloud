@@ -1,10 +1,15 @@
-const router = require("express").Router();
+const Router = require("express").Router();
 const postRoutes = require("./posts");
 const userController = require("../../controllers/userController");
 
+// // routes that we want to protect
+Router.get("/welcome", (req, res) => {
+  res.send("Welcome to the Jungle.");
+});
+
+Router.route("/users").post(userController.createNew);
+
 // Post routes
-router.use("/posts", postRoutes);
+Router.use("/posts", postRoutes);
 
-module.exports = router;
-
-//ADD CODE FOR LOGIN
+module.exports = Router;

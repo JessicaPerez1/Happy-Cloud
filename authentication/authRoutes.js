@@ -1,10 +1,11 @@
-const router = require("express").Router();
+const Router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
+const userController = require("../controllers/userController");
 
 //POST LOGIN
 
-router.post("/login", function (req, res) {
+Router.post("/login", function (req, res) {
   passport.authenticate("local", { session: false }, (err, user, info) => {
     console.log(user);
     if (err || !user) {
@@ -17,9 +18,11 @@ router.post("/login", function (req, res) {
       if (err) {
         res.send(err);
       }
-      const token = jwt.sign(user, "superSecret");
-      return res.json({ user, token });
+      const token = jwt.sign(user.toJSON(), "superSecret");
+      const { email } = user;
+      return res.json({ email, token });
     });
   })(req, res);
 });
-module.exports = router;
+Router.post("/register", userController.createNew);
+module.exports = Router;
