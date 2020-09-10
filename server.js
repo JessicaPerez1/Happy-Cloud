@@ -4,7 +4,7 @@ const routes = require("./routes");
 const app = express();
 const passport = require("./authentication/passport");
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4001;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));

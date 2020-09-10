@@ -11,12 +11,6 @@ function Profile() {
   // const [userState, setUserState] = useState([]);
 
   // //load user's info with useEffect()
-  // useEffect(() => {
-  //   loadUserInfo();
-  // }, []);
-
-  // //Load all user's info from db
-  // function loadUserInfo() {}
 
   return (
     <div>
@@ -25,13 +19,9 @@ function Profile() {
       <Logout />
     </div>
   );
-  //jumbotron with personalized welcome message "welcome userName" ===> Maybe create seperate component?
+  //jumbotron with personalized welcome message "welcome userName"
   //include Prompt Component
   //include Week history component for user to be able to view
   //include Generate Cloud button when milestone reached == when number of posts >=7
 }
-//jumbotron with personalized welcome message "welcome userName" ===> Maybe create seperate component?
-//include Prompt Component
-//include Week history component for user to be able to view
-//include Generate Cloud button when milestone reached == when number of posts >=7
 export default Profile;
