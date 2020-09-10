@@ -3,6 +3,7 @@ import React from "react";
 import { useGlobalContext } from "./utils/GlobalContext";
 import AuthenticatedApp from "./components/AuthenticatedApp";
 import UnauthenticatedApp from "./components/UnauthenticatedApp";
+// import { LOGIN } from "./utils/actions";
 // import Profile from "./pages/Profile";
 // import History from "./pages/History";
 // import Login from "./pages/Login";
@@ -14,13 +15,13 @@ function App() {
   //check if htere is authentiated user
   // useEffect(() => {
   //   //GET INFO FROM LOCALSTORAGE
-  //   // const user = JSON.parse(localStorage.getItem("authuser"));
-  //   // if (user.token) {
-  //   //   dispatch ({
-  //   //     type: LOGIN,
-  //   //     user: user,
-  //   //   })
-  //   // }
+  //   const user = JSON.parse(localStorage.getItem("authuser"));
+  //   if (user.token) {
+  //     dispatch({
+  //       type: LOGIN,
+  //       user: user,
+  //     });
+  //   }
   // }, []);
 
   return (
@@ -28,14 +29,6 @@ function App() {
     <div className="App">
       {state.user.token ? <AuthenticatedApp /> : <UnauthenticatedApp />}
     </div>
-    /* <Switch>
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/history" component={History} />
-        <Route exact path="/" component={Welcome} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-      </Switch> */
-    // </Router>
   );
 }
 
