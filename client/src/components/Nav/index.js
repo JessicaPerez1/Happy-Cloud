@@ -1,5 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "../../utils/GlobalContext";
+import { useHistory } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -22,16 +23,21 @@ const useStyles = makeStyles((theme) => ({
 
 function Nav() {
   const classes = useStyles();
-  return (
-    // <nav>
-    //   <div>Hello</div>
-    // </nav>
+  const history = useHistory();
 
+  const handleHistoryClick = () => {
+    history.push("/history");
+    console.log("you've been redirected to history page");
+  };
+  return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h5" className={classes.title}>
             Happy CLoud
+          </Typography>
+          <Typography variant="h8" className={classes.title}>
+            <Button onClick={handleHistoryClick}>History</Button>
           </Typography>
           <Button color="inherit">
             <Logout />
