@@ -38,7 +38,7 @@ function Prompt() {
 
   // When the form is submitted, use API method to save the users data
   // Then reload info from the database
-  function handleFormSubmit(event) {
+  function handlePostSubmit(event) {
     event.preventDefault();
     // if (formObject.title && formObject.author) {
     //   API.saveBook({
@@ -58,6 +58,7 @@ function Prompt() {
         style={{ backgroundColor: "#cfe8fc", height: "100vh" }}
       />
       {/* //question of the day card */}
+      <h3>Question Here</h3>
       <Card className="root">
         <CardContent>
           <Typography className="title" color="textSecondary" gutterBottom>
@@ -68,13 +69,14 @@ function Prompt() {
           </Typography>
         </CardContent>
       </Card>
-      {/* //input area */}
+      {/* Form Submit */}
       <form className="root" noValidate autoComplete="off">
         <TextField
           id="outlined-basic"
           label="Your WORD here"
           variant="outlined"
         />
+        <button onClick={handlePostSubmit}>Submit</button>
       </form>
     </Container>
   );
