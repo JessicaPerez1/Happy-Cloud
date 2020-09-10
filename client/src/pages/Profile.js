@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Prompt from "../components/Prompt";
 import WeekHistory from "../components/WeekHistory";
 import GenerateCloud from "../components/GenerateCloud";
+import AuthenticatedApp from "../components/AuthenticatedApp";
 
 function Profile() {
   //const userstate, setUserState, useState =
@@ -15,7 +16,7 @@ function Profile() {
   //Load all user's info from db
   function loadUserInfo() {}
 
-  return;
+  return <AuthenticatedApp />;
   //jumbotron with personalized welcome message "welcome userName" ===> Maybe create seperate component?
   //include Prompt Component
   //include Week history component for user to be able to view

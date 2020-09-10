@@ -6,6 +6,7 @@ const postSchema = new Schema({
     type: String,
     required: true,
     validate: [
+      //add maximum length of 15 characters
       ({ length }) => length >= 3,
       "Word should be at least 3 characters.",
     ],
