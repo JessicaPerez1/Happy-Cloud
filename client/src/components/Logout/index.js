@@ -1,6 +1,6 @@
 import React from "react";
-import { useGlobalContext } from "../../context/GlobalContext";
-import { LOGOUT } from "../../context/actions";
+import { useGlobalContext } from "../../utils/GlobalContext";
+import { LOGOUT } from "../../utils/actions";
 import { useHistory } from "react-router-dom";
 
 const Logout = () => {

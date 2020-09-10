@@ -30,33 +30,13 @@ const reducer = (state, action) => {
         posts: [action.post, ...state.posts],
       };
 
-    case REMOVE_POST:
-      return {
-        ...state,
-        posts: state.posts.filter((post) => {
-          return post._id !== action._id;
-        }),
-      };
-
-    case ADD_FAVORITE:
-      return {
-        ...state,
-        favorites: [action.post, ...state.favorites],
-      };
-
-    case UPDATE_FAVORITES:
-      return {
-        ...state,
-        favorites: [...state.favorites],
-      };
-
-    case REMOVE_FAVORITE:
-      return {
-        ...state,
-        favorites: state.favorites.filter((post) => {
-          return post._id !== action._id;
-        }),
-      };
+    // case REMOVE_POST:
+    //   return {
+    //     ...state,
+    //     posts: state.posts.filter((post) => {
+    //       return post._id !== action._id;
+    //     }),
+    //   };
 
     default:
       return state;
