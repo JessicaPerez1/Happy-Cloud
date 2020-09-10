@@ -3,8 +3,7 @@ import React, { useEffect } from "react";
 import { useGlobalContext } from "./utils/GlobalContext";
 import AuthenticatedApp from "./components/AuthenticatedApp";
 import UnauthenticatedApp from "./components/UnauthenticatedApp";
-import { LOGIN } from "./utils/actions";
-import { useHistory } from "react-router-dom";
+// import { LOGIN } from "./utils/actions";
 // import Profile from "./pages/Profile";
 // import History from "./pages/History";
 // import Login from "./pages/Login";
@@ -13,33 +12,23 @@ import { useHistory } from "react-router-dom";
 
 function App() {
   const [state, dispatch] = useGlobalContext();
-  const history = useHistory();
-  //check if there is an authenticated user
-  useEffect(() => {
-    //GET INFO FROM LOCALSTORAGE
-    const user = JSON.parse(localStorage.getItem("data")) || {};
-    if (user.token) {
-      dispatch({
-        type: LOGIN,
-        user: user,
-      });
-      history.push("/profile");
-    }
-  }, []);
+  //check if htere is authentiated user
+  // useEffect(() => {
+  //   //GET INFO FROM LOCALSTORAGE
+  //   const user = JSON.parse(localStorage.getItem("authuser"));
+  //   if (user.token) {
+  //     dispatch({
+  //       type: LOGIN,
+  //       user: user,
+  //     });
+  //   }
+  // }, []);
 
   return (
     // <Router>
     <div className="App">
       {state.user.token ? <AuthenticatedApp /> : <UnauthenticatedApp />}
     </div>
-    /* <Switch>
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/history" component={History} />
-        <Route exact path="/" component={Welcome} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-      </Switch> */
-    // </Router>
   );
 }
 
