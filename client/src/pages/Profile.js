@@ -3,17 +3,25 @@ import React, { useState, useEffect } from "react";
 import Prompt from "../components/Prompt";
 import WeekHistory from "../components/WeekHistory";
 import GenerateCloud from "../components/GenerateCloud";
+<<<<<<< HEAD
 import { useGlobalContext } from "../utils/GlobalContext";
 import { LOGOUT } from "../utils/actions";
 import { useHistory } from "react-router-dom";
+=======
+import Logout from "../components/Logout";
+import Nav from "../components/Nav";
+>>>>>>> master
 
 function Profile() {
-  //const userstate, setUserState, useState =
-  const [userState, setUserState] = useState([]);
+  // const userstate, setUserState, useState =
+  // const [userState, setUserState] = useState([]);
 
-  const [state, dispatch] = useGlobalContext();
-  const history = useHistory();
+  // //load user's info with useEffect()
+  // useEffect(() => {
+  //   loadUserInfo();
+  // }, []);
 
+<<<<<<< HEAD
   const handleLogout = () => {
     dispatch({
       type: LOGOUT,
@@ -29,11 +37,16 @@ function Profile() {
 
   // //Load all user's info from db
   function loadUserInfo() {}
+=======
+  // //Load all user's info from db
+  // function loadUserInfo() {}
+>>>>>>> master
 
   return (
     <div>
+      <Nav />
       <p>Congrats! You're logged in.</p>
-      <button onClick={handleLogout}>Logout</button>
+      <Logout />
     </div>
   );
   //jumbotron with personalized welcome message "welcome userName" ===> Maybe create seperate component?
