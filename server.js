@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 const routes = require("./routes");
 const app = express();
 const passport = require("./authentication/passport");
@@ -17,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/happycloud", {
+mongoose.connect(process.env.MONGODB_URI || MONGO, {
   useCreateIndex: true,
   useNewUrlParser: true,
 });
