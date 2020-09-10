@@ -8,6 +8,7 @@ const Logout = () => {
   const history = useHistory();
 
   const handleLogout = () => {
+    localStorage.removeItem("data");
     dispatch({
       type: LOGOUT,
     });
