@@ -3,14 +3,11 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { LOGIN } from "../utils/actions";
 import { useGlobalContext } from "../utils/GlobalContext";
-import LoginForm from "../components/LoginForm";
-
 const Login = () => {
   const [state, dispatch] = useGlobalContext();
   const emailRef = useRef();
   const passwordRef = useRef();
   const history = useHistory();
-
   //SET USER LOGIN INFO TO LOCALSTORAGE
   const setLocalStorage = (user) => {
     console.log(user);
@@ -19,7 +16,6 @@ const Login = () => {
     storageInfo.push(userInfo);
     localStorage.setItem("data", JSON.stringify(storageInfo));
   };
-
   const doLogin = async () => {
     const { data } = await axios.post("/auth/login", {
       email: emailRef.current.value,
@@ -45,12 +41,20 @@ const Login = () => {
       alert("success");
     }
     doLogin();
-    console.log("you've logged in");
+    console.log("you’ve logged in");
     history.push("/profile");
   };
   return (
     <div>
-      <LoginForm />
+      <p>Please enter your information to Login:</p>
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="email" ref={emailRef} />
+        <input type="text" placeholder="password" ref={passwordRef} />
+        <button type="submit">Submit</button>
+      </form>
+      <p>
+        Not registered yet?<Link to="/register"> Register now </Link>.
+      </p>
     </div>
   );
 };
