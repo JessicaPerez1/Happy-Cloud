@@ -59,11 +59,6 @@ const Signup = () => {
     });
 
     console.log(data);
-
-    // dispatch({
-    //   type: LOGIN,
-    //   user: data,
-    // });
   };
 
   const handleSignup = (e) => {

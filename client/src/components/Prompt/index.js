@@ -55,10 +55,9 @@ function Prompt() {
     <Container maxWidth="sm">
       <Typography
         component="div"
-        style={{ backgroundColor: "#cfe8fc", height: "100vh" }}
+        style={{ backgroundColor: "#cfe8fc", height: "10vh" }}
       />
       {/* //question of the day card */}
-      <h3>Question Here</h3>
       <Card className="root">
         <CardContent>
           <Typography className="title" color="textSecondary" gutterBottom>
