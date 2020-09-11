@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useGlobalContext } from "./utils/GlobalContext";
 import AuthenticatedApp from "./components/AuthenticatedApp";
 import UnauthenticatedApp from "./components/UnauthenticatedApp";
-import { LOGIN } from "./utils/actions";
+// import { LOGIN } from "./utils/actions";
 import { useHistory } from "react-router-dom";
 // import Profile from "./pages/Profile";
 // import History from "./pages/History";
@@ -16,20 +16,19 @@ function App() {
   //check if htere is authentiated user
   const history = useHistory();
   //check if there is an authenticated user
-  useEffect(() => {
-    //GET INFO FROM LOCALSTORAGE
-    const user = JSON.parse(localStorage.getItem("data")) || {};
-    if (user.token) {
-      dispatch({
-        type: LOGIN,
-        user: user,
-      });
-      history.push("/profile");
-    }
-  }, []);
+  // useEffect(() => {
+  //   //GET INFO FROM LOCALSTORAGE
+  //   const user = JSON.parse(localStorage.getItem("data")) || {};
+  //   if (user.token) {
+  //     dispatch({
+  //       type: LOGIN,
+  //       user: user,
+  //     });
+  //     history.push("/profile");
+  //   }
+  // }, []);
 
   return (
-    // <Router>
     <div className="App">
       {state.user.token ? <AuthenticatedApp /> : <UnauthenticatedApp />}
     </div>

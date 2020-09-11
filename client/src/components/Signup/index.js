@@ -92,7 +92,7 @@ const Signup = () => {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
-                ref={regEmailRef}
+                inputRef={regEmailRef}
               />
             </Grid>
             <Grid item xs={12}>
@@ -105,7 +105,7 @@ const Signup = () => {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                ref={regPasswordRef}
+                inputRef={regPasswordRef}
               />
             </Grid>
           </Grid>

@@ -2,8 +2,11 @@
 import React from "react";
 import API from "../utils/API";
 import Card from "../components/DailyPost";
+import Post from "../components/Post";
 
-class History extends Component {
+import List from "@material-ui/core/List";
+
+class History extends React.Component {
   state = {
     posts: [],
   };
