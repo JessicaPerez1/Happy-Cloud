@@ -50,15 +50,7 @@ const Login = () => {
   };
   return (
     <div>
-      <p>Please enter your information to L:</p>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="email" ref={emailRef} />
-        <input type="text" placeholder="password" ref={passwordRef} />
-        <button type="submit">Submit</button>
-      </form>
-      <p>
-        Not registered yet?<Link to="/register"> Register now </Link>.
-      </p>
+      <LoginForm />
     </div>
   );
 };
