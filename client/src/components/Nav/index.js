@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  toolbar: {
+    minHeight: 110,
+    paddingBottom: theme.spacing(1),
+  },
 }));
 
 function Nav() {
@@ -29,15 +33,20 @@ function Nav() {
     history.push("/history");
     console.log("you've been redirected to history page");
   };
+  const handleProfileClick = () => {
+    history.push("/profile");
+    console.log("you've been redirected to Profile page");
+  };
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className={classes.toolbar}>
           <Typography variant="h5" className={classes.title}>
             Happy CLoud
           </Typography>
           <Typography variant="h8" className={classes.title}>
             <Button onClick={handleHistoryClick}>History</Button>
+            <Button onClick={handleProfileClick}>Profile</Button>
           </Typography>
           <Button color="inherit">
             <Logout />
