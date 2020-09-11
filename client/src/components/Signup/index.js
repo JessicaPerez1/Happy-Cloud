@@ -48,25 +48,25 @@ const useStyles = makeStyles((theme) => ({
 
 const Signup = () => {
   const classes = useStyles();
-  // const regEmailRef = useRef();
-  // const regPasswordRef = useRef();
-  // const history = useHistory();
+  const regEmailRef = useRef();
+  const regPasswordRef = useRef();
+  const history = useHistory();
 
-  // const doSignup = async () => {
-  //   const { data } = await axios.post("/auth/register", {
-  //     email: regEmailRef.current.value,
-  //     password: regPasswordRef.current.value,
-  //   });
+  const doSignup = async () => {
+    const { data } = await axios.post("/auth/register", {
+      email: regEmailRef.current.value,
+      password: regPasswordRef.current.value,
+    });
 
-  //   console.log(data);
-  // };
+    console.log(data);
+  };
 
-  // const handleSignup = (e) => {
-  //   e.preventDefault();
-  //   console.log("you've signed up");
-  //   doSignup();
-  //   history.push("/login");
-  // };
+  const handleSignup = (e) => {
+    e.preventDefault();
+    console.log("you've signed up");
+    doSignup();
+    history.push("/login");
+  };
 
   return (
     <Container component="main" maxWidth="xs">
