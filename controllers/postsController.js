@@ -4,12 +4,15 @@ const { User } = require("../models");
 
 // Defining methods for the postsController
 module.exports = {
-  findAll: function (req, res) {
-    db.Post.find(req.query)
+  // find all for each user
+  findAllByUserId: function (req, res) {
+    console.log(req.params.id)
+    db.Post.find({ user: req.params.id })
       .sort({ date: -1 })
-      .then((dbModel) => res.json(dbModel))
+      .then((userPosts) => res.json(userPosts))
       .catch((err) => res.status(422).json(err));
   },
+
   findById: function (req, res) {
     db.Post.findById(req.params.id)
       .then((dbModel) => res.json(dbModel))
@@ -43,4 +46,17 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
+  // findAllByUserId: function (req, res) {
+  //   db.Post.find(req.query)
+  //     .sort({ date: -1 })
+  //     .then((dbModel) => res.json(dbModel))
+  //     .catch((err) => res.status(422).json(err));
+  // },
+  // find all by date?
+  // findAllByDate: function (req, res) {
+  //   db.Post.find(req.query)
+  //     .sort({ date: -1 })
+  //     .then((dbModel) => res.json(dbModel))
+  //     .catch((err) => res.status(422).json(err));
+  // },
 };
