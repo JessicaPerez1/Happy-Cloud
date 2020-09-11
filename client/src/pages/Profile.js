@@ -10,15 +10,14 @@ function Profile() {
   // const userstate, setUserState, useState =
   // const [userState, setUserState] = useState([]);
 
-  // //load user's info with useEffect()
-
   return (
     <div>
       <Nav />
       <p>Congrats! You're logged in.</p>
+      <Prompt />
     </div>
   );
-  //jumbotron with personalized welcome message "welcome userName"
+  //jumbotron with personalized welcome message "welcome userName"==NO USERNAME
   //include Prompt Component
   //include Week history component for user to be able to view
   //include Generate Cloud button when milestone reached == when number of posts >=7
