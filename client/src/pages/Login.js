@@ -14,7 +14,7 @@ const Login = () => {
   const setLocalStorage = (user) => {
     console.log(user);
     const storageInfo = [];
-    let userInfo = { email: user.email, token: user.token };
+    let userInfo = { email: user.email, token: user.token, id: user.id };
     storageInfo.push(userInfo);
     localStorage.setItem("data", JSON.stringify(storageInfo));
   };

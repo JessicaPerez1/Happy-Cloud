@@ -19,7 +19,7 @@ Router.post("/login", function (req, res) {
         res.send(err);
       }
       const token = jwt.sign(user.toJSON(), "superSecret");
-      const { email } = user;
+      const { email, userId } = user;
       return res.json({ email, token });
     });
   })(req, res);

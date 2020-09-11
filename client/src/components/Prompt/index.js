@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import API from "../../utils/API";
 import DailyPost from "../DailyPost";
 
 import Container from "@material-ui/core/Container";
