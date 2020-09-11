@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
+// require("dotenv").config();
 const routes = require("./routes");
 const app = express();
 const passport = require("./authentication/passport");
@@ -18,10 +18,14 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || MONGO, {
-  useCreateIndex: true,
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  process.env.MONGODB_URI ||
+    "mongodb+srv://jess:1@Mongodb@cluster1.qamsi.mongodb.net/project3?retryWrites=true&w=majority",
+  {
+    useCreateIndex: true,
+    useNewUrlParser: true,
+  }
+);
 // Start the API server
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
