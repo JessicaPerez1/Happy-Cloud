@@ -1,4 +1,6 @@
 const db = require("../models");
+const { User } = require("../models");
+// const User = require("../models/User");
 
 // Defining methods for the postsController
 //find all the posts of a user through user
@@ -16,8 +18,20 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    db.Post.create(req.body)
-      .then((dbModel) => res.json(dbModel))
+    const { userId, post } = req.body;
+    db.Post.create({ post: post })
+      .then((newPost) => {
+        // add the post to the users posts array
+        db.User.findByIdAndUpdate(
+          { _id: userId },
+          { $push: { posts: newPost._id } }
+        ).then((updatedUser) => {
+          res.json(updatedUser);
+        });
+        // send the new post back a as json
+        // res.json(dbModel);
+      })
+      //
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
