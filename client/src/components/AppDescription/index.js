@@ -2,7 +2,7 @@
 //include this in the Welcome page
 import React from "react";
 import { styled } from "@material-ui/core/styles";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
