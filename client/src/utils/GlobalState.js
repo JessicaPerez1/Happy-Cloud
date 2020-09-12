@@ -1,16 +1,16 @@
 import React, { createContext, useReducer, useContext } from "react";
-import { SET_CURRENT_POST, UPDATE_POSTS, ADD_POST } from "./actions";
+import { SET_CURRENT_POST, UPDATE_POSTS, ADD_POST, LOADING } from "./actions";
 
 const PostContext = createContext();
 const { Provider } = PostContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-    // case SET_CURRENT_POST:
-    //   return {
-    //     ...state,
-    //     currentPost: action.post,
-    //   };
+    case SET_CURRENT_POST:
+      return {
+        ...state,
+        currentPost: action.post,
+      };
 
     case UPDATE_POSTS:
       return {
@@ -22,6 +22,13 @@ const reducer = (state, action) => {
       return {
         ...state,
         posts: [action.post, ...state.posts],
+        // user: [action.user, ...state.user],
+      };
+
+    case LOADING:
+      return {
+        ...state,
+        loading: true,
       };
 
     // case REMOVE_POST:

@@ -1,13 +1,10 @@
-<<<<<<< HEAD
 import React, { useRef, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
-=======
-import React, { useState, useEffect } from "react";
+// import axios from "axios";
+import { usePostContext } from "../../utils/GlobalState";
+// import DailyPost from "../DailyPost";
+import { ADD_POST } from "../../utils/actions";
 import API from "../../utils/API";
->>>>>>> master
-import DailyPost from "../DailyPost";
-// import API from "../utils/API";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -28,41 +25,68 @@ const useStyles = makeStyles({
 
 //functional component
 function Prompt() {
-  const [promptState, setPromptState] = useState();
+  // const [promptState, setPromptState] = useState();
   const postRef = useRef();
+  const userRef = useRef();
   const history = useHistory();
+  const [state, dispatch] = usePostContext();
+  const user = JSON.parse(localStorage.getItem("data"));
+  // console.log(userId);
+  console.log(user[0].id);
+  const userId = user[0].id;
+
+  // function getUserId() {
+  //   return localStorage.getItem("user.email");
+  // }
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const info = event.target.value;
-    setPromptState({ ...promptState, info });
-    console.log(promptState);
+    // setPromptState({ ...promptState, info });
+    // console.log(promptState);
     console.log(info);
   }
 
-  const addPost = async () => {
-    const { data } = await axios.post("/api/profile", {
-      posts: postRef.current.value,
-    });
-    console.log(data);
-  };
+  // const addPost = async () => {
+  //   const { data } = await axios.post("/api/posts", {
+  //     posts: postRef.current.value,
+  //   });
+  //   console.log(data);
+  // };
   //load question of the day info with useEffect()
   // useEffect(() => {
   //   loadQuestion();
   // }, []);
 
-  //Load question function
-  function loadQuestion() {}
+  // //Load question function
+  // function loadQuestion() {}
 
   // When the form is submitted, use API method to save the users data
   // Then reload info from the database
   function handlePostSubmit(event) {
     event.preventDefault();
+    // dispatch({ type: LOADING });
     console.log("This button was clicked");
-    addPost();
-    // history.push("/api/posts");
-    // setPromptState((promptState = newPost));
-    // API.savePost();
+    // console.log(event.target.value);
+    // addPost();
+    API.createPost({
+      post: postRef.current.value,
+      user: userRef.userId,
+    })
+      .then((result) => {
+        dispatch({
+          type: ADD_POST,
+          post: result.data,
+          user: result.data,
+        });
+      })
+      .catch((err) => console.log(err));
+
+    postRef.current.value = "";
+    // userRef.current.value = "";
   }
+  // history.push("/api/posts");
+  // setPromptState((promptState = newPost));
+  // API.savePost();
 
   // API.savePost({
   //   post:
