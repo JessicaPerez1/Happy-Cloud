@@ -2,9 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
-function editButton() {
-  function edit(e) {}
-
+function EditButton() {
   return (
     <div>
       <Link to="/editpage">
@@ -16,7 +14,7 @@ function editButton() {
   );
 }
 
-export default editButton;
+export default EditButton;
 
 // import React from "react";
 // import { Redirect } from "react-router-dom";
@@ -31,13 +29,3 @@ export default editButton;
 //     );
 //   }
 // }
-
-// export default Login;
-//include an edit button
-
-//add it to where ever we need it
-import React from "react";
-
-export const EditButton = () => {
-  return <div></div>;
-};
