@@ -13,7 +13,7 @@ import Welcome from "./pages/Welcome";
 
 function App() {
   const [state, dispatch] = useGlobalContext();
-  //check if htere is authentiated user
+
   const history = useHistory();
   //check if there is an authenticated user
   // useEffect(() => {

@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { LOGIN } from "../utils/actions";
 import { useGlobalContext } from "../utils/GlobalContext";
+
 const Login = () => {
   const [state, dispatch] = useGlobalContext();
   const emailRef = useRef();
@@ -12,7 +13,7 @@ const Login = () => {
   const setLocalStorage = (user) => {
     console.log(user);
     const storageInfo = [];
-    let userInfo = { email: user.email, token: user.token };
+    let userInfo = { email: user.email, token: user.token, id: user._id };
     storageInfo.push(userInfo);
     localStorage.setItem("data", JSON.stringify(storageInfo));
   };

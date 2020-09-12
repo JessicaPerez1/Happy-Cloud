@@ -17,7 +17,7 @@ class History extends React.Component {
   }
 
   getSavedPosts = () => {
-    API.getPosts()
+    API.getPosts("5f5b92e8121bf93d5e9144a5")
       .then((res) =>
         this.setState({
           posts: res.data,
@@ -48,8 +48,8 @@ class History extends React.Component {
                 ))}
               </List>
             ) : (
-              <h2 className="text-center">No Saved Posts</h2>
-            )}
+                <h2 className="text-center">No Saved Posts</h2>
+              )}
           </Card>
         </div>
       </div>

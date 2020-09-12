@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import React, { useRef, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+=======
+import React, { useState, useEffect } from "react";
+import API from "../../utils/API";
+>>>>>>> master
 import DailyPost from "../DailyPost";
 // import API from "../utils/API";
 import Container from "@material-ui/core/Container";
@@ -41,9 +46,9 @@ function Prompt() {
     console.log(data);
   };
   //load question of the day info with useEffect()
-  useEffect(() => {
-    loadQuestion();
-  }, []);
+  // useEffect(() => {
+  //   loadQuestion();
+  // }, []);
 
   //Load question function
   function loadQuestion() {}
