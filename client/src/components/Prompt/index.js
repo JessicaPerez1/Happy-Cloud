@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DailyPost from "../DailyPost";
-
+import API from "../utils/API";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -40,16 +40,21 @@ function Prompt() {
   // Then reload info from the database
   function handlePostSubmit(event) {
     event.preventDefault();
-    // if (formObject.title && formObject.author) {
-    //   API.saveBook({
-    //     title: formObject.title,
-    //     author: formObject.author,
-    //     synopsis: formObject.synopsis,
-    //   })
-    //     .then((res) => loadBooks())
-    //     .catch((err) => console.log(err));
-    // }
+    API.savePost();
   }
+
+  // API.savePost({
+  //   post:
+  // }
+  // if (formObject.title && formObject.author) {
+  //   API.saveBook({
+  //     title: formObject.title,
+  //     author: formObject.author,
+  //     synopsis: formObject.synopsis,
+  //   })
+  //     .then((res) => loadBooks())
+  //     .catch((err) => console.log(err));
+  // }
 
   return (
     <Container maxWidth="sm">

@@ -42,9 +42,9 @@ const PostProvider = ({ value = [], ...props }) => {
     posts: [],
     currentPost: {
       _id: 0,
-      title: "",
-      body: "",
-      author: "",
+      post: "",
+      date: "",
+      user: "",
     },
   });
 

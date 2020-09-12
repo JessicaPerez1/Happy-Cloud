@@ -22,7 +22,7 @@ module.exports = {
         // add the post to the users posts array
         db.User.findByIdAndUpdate(
           { _id: userId },
-          { $push: { posts: newPost._id } }
+          { $push: { posts: newPost.post } }
         ).then((updatedUser) => {
           res.json(updatedUser);
         });
