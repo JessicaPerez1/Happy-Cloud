@@ -31,7 +31,7 @@ function Prompt() {
   const history = useHistory();
   const [state, dispatch] = usePostContext();
   const user = JSON.parse(localStorage.getItem("data"));
-  // console.log(userId);
+  console.log(user);
   console.log(user[0].id);
   const userId = user[0].id;
 
