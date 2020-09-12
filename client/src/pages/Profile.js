@@ -1,6 +1,7 @@
 //user's profile page
 import React, { useState, useEffect } from "react";
 import Prompt from "../components/Prompt";
+import DailyPost from "../components/DailyPost";
 import WeekHistory from "../components/WeekHistory";
 import GenerateCloud from "../components/GenerateCloud";
 
@@ -15,6 +16,7 @@ function Profile() {
       <Nav />
       <p>Congrats! You're logged in.</p>
       <Prompt />
+      {/* <DailyPost /> */}
     </div>
   );
   //jumbotron with personalized welcome message "welcome userName"==NO USERNAME

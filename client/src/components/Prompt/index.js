@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 import DailyPost from "../DailyPost";
-import API from "../utils/API";
+// import API from "../utils/API";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -22,12 +24,22 @@ const useStyles = makeStyles({
 //functional component
 function Prompt() {
   const [promptState, setPromptState] = useState();
-
+  const postRef = useRef();
+  const history = useHistory();
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
-    // const info = event.target;
-    // setUserState({ ...userState, info});
+    const info = event.target.value;
+    setPromptState({ ...promptState, info });
+    console.log(promptState);
+    console.log(info);
   }
+
+  const addPost = async () => {
+    const { data } = await axios.post("/api/profile", {
+      posts: postRef.current.value,
+    });
+    console.log(data);
+  };
   //load question of the day info with useEffect()
   useEffect(() => {
     loadQuestion();
@@ -40,7 +52,11 @@ function Prompt() {
   // Then reload info from the database
   function handlePostSubmit(event) {
     event.preventDefault();
-    API.savePost();
+    console.log("This button was clicked");
+    addPost();
+    // history.push("/api/posts");
+    // setPromptState((promptState = newPost));
+    // API.savePost();
   }
 
   // API.savePost({
@@ -78,7 +94,11 @@ function Prompt() {
         <TextField
           id="outlined-basic"
           label="Your WORD here"
+          type="text"
           variant="outlined"
+          name="post"
+          onChange={handleInputChange}
+          inputRef={postRef}
         />
         <button onClick={handlePostSubmit}>Submit</button>
       </form>
