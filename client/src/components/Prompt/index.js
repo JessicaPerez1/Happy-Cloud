@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import API from "../../utils/API";
 import DailyPost from "../DailyPost";
 
 import Container from "@material-ui/core/Container";
@@ -23,33 +24,13 @@ const useStyles = makeStyles({
 function Prompt() {
   const [promptState, setPromptState] = useState();
 
-  // Handles updating component state when the user types into the input field
-  function handleInputChange(event) {
-    // const info = event.target;
-    // setUserState({ ...userState, info});
-  }
   //load question of the day info with useEffect()
-  useEffect(() => {
-    loadQuestion();
-  }, []);
+  // useEffect(() => {
+  //   loadQuestion();
+  // }, []);
 
   //Load question function
-  function loadQuestion() {}
-
-  // When the form is submitted, use API method to save the users data
-  // Then reload info from the database
-  function handlePostSubmit(event) {
-    event.preventDefault();
-    // if (formObject.title && formObject.author) {
-    //   API.saveBook({
-    //     title: formObject.title,
-    //     author: formObject.author,
-    //     synopsis: formObject.synopsis,
-    //   })
-    //     .then((res) => loadBooks())
-    //     .catch((err) => console.log(err));
-    // }
-  }
+  // function loadQuestion() {}
 
   return (
     <Container maxWidth="sm">
@@ -69,14 +50,6 @@ function Prompt() {
         </CardContent>
       </Card>
       {/* Form Submit */}
-      <form className="root" noValidate autoComplete="off">
-        <TextField
-          id="outlined-basic"
-          label="Your WORD here"
-          variant="outlined"
-        />
-        <button onClick={handlePostSubmit}>Submit</button>
-      </form>
     </Container>
   );
 

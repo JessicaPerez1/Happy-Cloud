@@ -2,6 +2,8 @@ const db = require("../models")
 // const User = require("../models/User");
 
 // Defining methods for the postsController
+//find all the posts of a user through user
+//use poplutate
 module.exports = {
   // find all for each user
   findAllByUserId: function (req, res) {
