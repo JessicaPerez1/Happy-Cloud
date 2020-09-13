@@ -17,6 +17,7 @@ function Profile() {
       <p>Congrats! You're logged in.</p>
       <Prompt />
       <HistoryList />
+      <GenerateCloud />
     </div>
   );
   //jumbotron with personalized welcome message "welcome userName"==NO USERNAME
