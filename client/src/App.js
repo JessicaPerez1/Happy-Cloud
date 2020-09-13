@@ -5,11 +5,11 @@ import AuthenticatedApp from "./components/AuthenticatedApp";
 import UnauthenticatedApp from "./components/UnauthenticatedApp";
 // import { LOGIN } from "./utils/actions";
 import { useHistory } from "react-router-dom";
-import Profile from "./pages/Profile";
-import History from "./pages/History";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Welcome from "./pages/Welcome";
+// import Profile from "./pages/Profile";
+// import History from "./pages/History";
+// import Login from "./pages/Login";
+// import Register from "./pages/Register";
+// import Welcome from "./pages/Welcome";
 
 function App() {
   const [state, dispatch] = useGlobalContext();
@@ -30,16 +30,16 @@ function App() {
 
   return (
     <Router>
-      {/* <div className="App">
-      {state.user.token ? <AuthenticatedApp /> : <UnauthenticatedApp />}
-    </div> */}
-      <Switch>
+      <div className="App">
+        {state.user.token ? <AuthenticatedApp /> : <UnauthenticatedApp />}
+      </div>
+      {/* <Switch>
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/history" component={History} />
         <Route exact path="/" component={Welcome} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
-      </Switch>
+      </Switch> */}
     </Router>
   );
 }
