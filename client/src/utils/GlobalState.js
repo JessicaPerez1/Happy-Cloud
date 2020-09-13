@@ -62,4 +62,16 @@ const usePostContext = () => {
   return useContext(PostContext);
 };
 
-export { PostProvider, usePostContext };
+const useStoreContext = () => {
+  return useReducer(reducer, {
+    posts: [],
+    currentPost: {
+      _id: 0,
+      post: "",
+      date: "",
+      user: "",
+    }
+  });
+}
+
+export { PostProvider, usePostContext, useStoreContext };

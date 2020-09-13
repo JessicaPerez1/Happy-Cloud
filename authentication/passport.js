@@ -13,8 +13,10 @@ passport.use(
       passwordField: "password",
     },
     function (email, password, cb) {
+      console.log('passport', email, password)
       return db.User.findOne({ email, password })
         .then((user) => {
+          console.log('db findOne', user);
           if (!user) {
             return cb(null, false, { message: "Incorrect email or password" });
           }

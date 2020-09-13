@@ -2,12 +2,14 @@ import axios from "axios";
 
 export default {
   // Gets all posts
-  getPosts: function (id) {
-    return axios.get("/api/" + id + "posts");
+  getPosts: function () {
+    const header = { headers: { "Authorization": "Bearer " + JSON.parse(localStorage.getItem("data"))[0].token } }
+    return axios.get("/api/posts", header);
   },
   // Gets the post with the given id
   getSavedPosts: function (id) {
-    return axios.get("/api/posts/" + id);
+    const header = { headers: { "Authorization": "Bearer " + JSON.parse(localStorage.getItem("data"))[0].token } }
+    return axios.get("/api/posts/" + id, header);
   },
   // // Deletes the post with the given id
   // deletePost: function(id) {
@@ -23,6 +25,7 @@ export default {
   },
   // Saves/edit a post to the database
   savePost: function (postData) {
-    return axios.put("/api/posts", postData);
+    const header = { headers: { "Authorization": "Bearer " + JSON.parse(localStorage.getItem("data"))[0].token } }
+    return axios.put("/api/posts", postData, header);
   },
 };

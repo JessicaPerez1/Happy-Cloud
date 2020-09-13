@@ -1,8 +1,8 @@
 //user can check the full list of posts
 import React from "react";
 import API from "../utils/API";
-import Card from "../components/DailyPost";
-import Post from "../components/Post";
+import Card from "@material-ui/core/Card";
+import PostList from "../components/PostList";
 import Nav from "../components/Nav";
 
 import List from "@material-ui/core/List";
@@ -17,7 +17,7 @@ class History extends React.Component {
   }
 
   getSavedPosts = () => {
-    API.getPosts("5f5b92e8121bf93d5e9144a5")
+    API.getPosts()
       .then((res) =>
         this.setState({
           posts: res.data,
@@ -37,16 +37,9 @@ class History extends React.Component {
           <h2 className="text-center">Posting history for your HappyCloud</h2>
           <Card title="Saved Posts" icon="download">
             {this.state.posts.length ? (
-              <List>
-                {this.state.posts.map((post) => (
-                  <Post
-                    key={post._id}
-                    word={post.word}
-                    date={post.date}
-                    owner={post.owner}
-                  />
-                ))}
-              </List>
+              <PostList>
+                
+              </PostList>
             ) : (
                 <h2 className="text-center">No Saved Posts</h2>
               )}
