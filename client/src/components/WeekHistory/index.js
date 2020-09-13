@@ -1,7 +1,7 @@
 //most recent history of posts (within the past week)
 import React from "react";
 
-const DailyPost = () => {
+const WeekHistory = () => {
   return (
     <div>
       <h1>
@@ -11,4 +11,4 @@ const DailyPost = () => {
     </div>
   );
 };
-export default DailyPost;
+export default WeekHistory;

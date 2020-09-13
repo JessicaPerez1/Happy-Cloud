@@ -2,9 +2,16 @@ import axios from "axios";
 
 export default {
   // Gets all posts
-  getPosts: function (id) {
-    return axios.get("/api/" + id + "posts");
-    // forward slash on posts??
+  getPosts: function (userId) {
+    const id = userId;
+    const header = {
+      headers: {
+        Authorization:
+          "Bearer " + JSON.parse(localStorage.getItem("data"))[0].token,
+      },
+    };
+    console.log(id);
+    return axios.get("/api/user/" + id + "/posts", header);
   },
   // Gets the post with the given id
   getSavedPosts: function (id) {
@@ -15,11 +22,16 @@ export default {
   //   return axios.delete("/api/posts/" + id);
   // },
   createPost: function (userId, post) {
-    const params = { userId, post }
-    const header = { headers: { "Authorization": "Bearer " + JSON.parse(localStorage.getItem("data"))[0].token } }
-    console.log("id", userId)
-    console.log("postdata", post)
-    console.log("token", header)
+    const params = { userId, post };
+    const header = {
+      headers: {
+        Authorization:
+          "Bearer " + JSON.parse(localStorage.getItem("data"))[0].token,
+      },
+    };
+    console.log("id", userId);
+    console.log("postdata", post);
+    console.log("token", header);
     return axios.post("/api/posts", params, header);
   },
   // Saves/edit a post to the database
