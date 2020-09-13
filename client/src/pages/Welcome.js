@@ -9,15 +9,17 @@ function Welcome() {
   const [welcomeState, setWelcomeState] = useState();
 
   return (
-    <div>
+    <>
       <AppDescription />
-      <button className="button">
-        <Link className="loginbutton" to="/login">
-          LOGIN HERE
-        </Link>
-      </button>
-      {/* <SharedPost /> */}
-    </div>
+      <div>
+        <button className="button">
+          <Link className="loginbutton" to="/login">
+            LOGIN HERE
+          </Link>
+        </button>
+        {/* <SharedPost /> */}
+      </div>
+    </>
   );
   //include AppDescription component
   //include SharedPost component
