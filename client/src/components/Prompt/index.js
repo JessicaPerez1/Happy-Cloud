@@ -30,10 +30,7 @@ function Prompt() {
   const userRef = useRef();
   const history = useHistory();
   const [state, dispatch] = usePostContext();
-  const user = JSON.parse(localStorage.getItem("data"));
-  console.log(user);
-  console.log(user[0].id);
-  const userId = user[0].id;
+
 
   // function getUserId() {
   //   return localStorage.getItem("user.email");
@@ -68,10 +65,15 @@ function Prompt() {
     console.log("This button was clicked");
     // console.log(event.target.value);
     // addPost();
-    API.createPost({
-      post: postRef.current.value,
-      user: userRef.userId,
-    })
+    const user = JSON.parse(localStorage.getItem("data"));
+    console.log(user[0].id);
+    const userId = user[0].id;
+    console.log("postref", postRef.current.value)
+    console.log("This is user is ajax call", userId)
+    API.createPost(
+      userId,
+      postRef.current.value
+    )
       .then((result) => {
         dispatch({
           type: ADD_POST,

@@ -23,13 +23,13 @@ module.exports = {
     const { userId, post } = req.body;
     console.log("req.body", req.body);
     console.log("post", post);
-    db.Post.create({ post: post, user: req.body.userId })
+    db.Post.create({ post: post, userId: req.body.userId })
       .then((newPost) => {
         console.log("new post", newPost);
         // add the post to the users posts array
         db.User.findByIdAndUpdate(
           { _id: userId },
-          { $push: { posts: newPost.post } }
+          { $push: { posts: newPost } }
         ).then((updatedUser) => {
           res.json(updatedUser);
         });
