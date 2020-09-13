@@ -31,16 +31,6 @@ const Login = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (emailRef === "") {
-      alert("Message can not be blank");
-    } else if (passwordRef === "") {
-      alert("Password can not be blank");
-      //add and else if statement if the user email and info dont exist in the database
-      // } else if (emailRef || passwordRef !== userInfo) {
-      //   alert("Please signup to join Happy Cloud!");
-    } else {
-      alert("success");
-    }
     doLogin();
     console.log("you’ve logged in");
     history.push("/profile");
@@ -49,8 +39,8 @@ const Login = () => {
     <div>
       <p>Please enter your information to Login:</p>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="email" ref={emailRef} />
-        <input type="text" placeholder="password" ref={passwordRef} />
+        <input type="email" placeholder="email" ref={emailRef} required />
+        <input type="password" placeholder="password" ref={passwordRef} required />
         <button type="submit">Submit</button>
       </form>
       <p>
