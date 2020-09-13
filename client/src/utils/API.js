@@ -13,8 +13,13 @@ export default {
   // deletePost: function(id) {
   //   return axios.delete("/api/posts/" + id);
   // },
-  createPost: function (id, postData) {
-    return axios.post("/api/posts", id, postData);
+  createPost: function (userId, post) {
+    const params = { userId, post }
+    const header = { headers: { "Authorization": "Bearer " + JSON.parse(localStorage.getItem("data"))[0].token } }
+    console.log("id", userId)
+    console.log("postdata", post)
+    console.log("token", header)
+    return axios.post("/api/posts", params, header);
   },
   // Saves/edit a post to the database
   savePost: function (postData) {
