@@ -8,9 +8,10 @@ module.exports = {
   // find all for each user
   findAllByUserId: function (req, res) {
     console.log("user", req.params.id)
-    db.Post.find({ user: req.params.id })
+    db.Post.find({ userId: req.params.id })
       .sort({ date: -1 })
-      .then((userPosts) => res.json(userPosts))
+      .then((userPosts) =>
+        res.json(userPosts))
       .catch((err) => res.status(422).json(err));
   },
 
