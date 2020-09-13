@@ -5,6 +5,7 @@ import { usePostContext } from "../../utils/GlobalState";
 // import { LOADING, UPDATE_POSTS } from "../../utils/actions";
 import { Button } from "@material-ui/core";
 import API from "../../utils/API";
+// const SvgSaver = require("svgsaver");
 
 function generateCloud() {
   const [state, dispatch] = usePostContext();
@@ -14,6 +15,7 @@ function generateCloud() {
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         document.getElementById("root").innerHTML = this.responseText;
+        console.log(this.responseText);
       }
     };
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -40,6 +42,9 @@ function generateCloud() {
         console.log(generatedWords);
         const finalWords = generatedWords.join(" ");
         runCloud(finalWords);
+        // let svgsaver = new SvgSaver();
+        // const svg = document.querySelector("root");
+        // svgsaver.asSvg(svg);
       })
       .catch((err) => console.log(err));
   }
