@@ -29,7 +29,7 @@ passport.use(
 passport.use(
   new JWTStrategy(
     {
-      // { Authorization: "Bearer u984u0598q983uoijdfkljsadn.9183498uhfiujkaudhfia.q01938i92iisdjhfkjh"}
+      // Authorization: "Bearer u984u0598q983uoijdfkljsadn.9183498uhfiujkaudhfia.q01938i92iisdjhfkjh",
       jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
       secretOrKey: "superSecret",
     },
