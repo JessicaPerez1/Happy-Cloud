@@ -1,16 +1,66 @@
-import React from "react";
-import "./style.css";
+import React, { useRef, useState, useEffect } from "react";
+import { usePostContext } from "../../utils/GlobalState";
+import { LOADING, UPDATE_POSTS } from "../../utils/actions";
+import API from "../../utils/API";
+import { styled } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+// import "./style.css";
 
-// This file exports both the List and ListItem components
+const MyCard = styled(Card)({
+  width: "50%",
+});
 
-export function List({ children }) {
+function HistoryList() {
+  const [state, dispatch] = usePostContext();
+  // //get all posts from a user /id
+  // // loop through the items in post array and display
+
+  const getPosts = () => {
+    const user = JSON.parse(localStorage.getItem("data"));
+    console.log(user);
+    const userId = user[0].id;
+    console.log(userId);
+    dispatch({ type: LOADING });
+
+    API.getPosts(userId)
+      .then((results) => {
+        dispatch({
+          type: UPDATE_POSTS,
+          posts: results.data,
+          user: results.data.userId,
+        });
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    getPosts();
+  }, []);
+
   return (
-    <div className="list-overflow-container">
-      <ul className="list-group">{children}</ul>
+    <div>
+      {state.posts.map((post) => (
+        <MyCard>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              DATE OF THE POST:
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {post.date}
+            </Typography>
+            <Typography gutterBottom variant="h5" component="h2">
+              WORD POSTED:
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {post.post}
+            </Typography>
+          </CardContent>
+        </MyCard>
+      ))}
     </div>
   );
 }
 
-export function ListItem({ children }) {
-  return <li className="list-group-item">{children}</li>;
-}
+export default HistoryList;

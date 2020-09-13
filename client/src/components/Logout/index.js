@@ -3,6 +3,9 @@ import { useGlobalContext } from "../../utils/GlobalContext";
 import { LOGOUT } from "../../utils/actions";
 import { useHistory } from "react-router-dom";
 
+const myStyle = {
+  float: "right",
+};
 const Logout = () => {
   const [state, dispatch] = useGlobalContext();
   const history = useHistory();
@@ -16,9 +19,9 @@ const Logout = () => {
     console.log("you've been logged out");
   };
   return (
-    <div>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
+    <button style={myStyle} onClick={handleLogout}>
+      Logout
+    </button>
   );
 };
 export default Logout;
