@@ -1,4 +1,4 @@
-const db = require("../models")
+const db = require("../models");
 // const User = require("../models/User");
 
 // Defining methods for the postsController
@@ -7,7 +7,7 @@ const db = require("../models")
 module.exports = {
   // find all for each user
   findAllByUserId: function (req, res) {
-    console.log("user", req.params.id)
+    console.log("user", req.params.id);
     db.Post.find({ user: req.params.id })
       .sort({ date: -1 })
       .then((userPosts) => res.json(userPosts))
@@ -21,11 +21,11 @@ module.exports = {
   },
   create: function (req, res) {
     const { userId, post } = req.body;
-    console.log("req.body", req.body)
-    console.log("post", post)
+    console.log("req.body", req.body);
+    console.log("post", post);
     db.Post.create({ post: post, user: req.body.userId })
       .then((newPost) => {
-        console.log("new post", newPost)
+        console.log("new post", newPost);
         // add the post to the users posts array
         db.User.findByIdAndUpdate(
           { _id: userId },
@@ -51,11 +51,13 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   findAll: function (req, res) {
-    db.Post
-      .find(req.query)
+    db.Post.find(req.query)
       .sort({ date: -1 })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .then((dbModel) => {
+        console.log(dbModel);
+        res.json(dbModel);
+      })
+      .catch((err) => res.status(422).json(err));
   },
   // find all by date?
   // findAllByDate: function (req, res) {

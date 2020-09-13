@@ -4,6 +4,7 @@ export default {
   // Gets all posts
   getPosts: function (id) {
     return axios.get("/api/" + id + "posts");
+    // forward slash on posts??
   },
   // Gets the post with the given id
   getSavedPosts: function (id) {
