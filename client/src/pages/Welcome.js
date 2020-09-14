@@ -1,25 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import AppDescription from "../components/AppDescription";
-import SharedPost from "../components/SharedPost";
-import UnauthenticatedApp from "../components/UnauthenticatedApp";
-import "./welcome.css";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundImage:
+      "url(https://images.unsplash.com/photo-1500491460312-c32fc2dbc751?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60)",
+    backgroundSize: "100%",
+    backgroundRepeat: "repeat",
+    width: "100%",
+    height: "100%",
+    flexGrow: 1,
+    marginBottom: theme.spacing(2),
+  },
+}));
 function Welcome() {
   const [welcomeState, setWelcomeState] = useState();
-
+  const classes = useStyles();
   return (
-    <>
+    <div className={classes.root}>
       <AppDescription />
-      <div>
-        <button className="button">
-          <Link className="loginbutton" to="/login">
-            LOGIN HERE
-          </Link>
-        </button>
-        {/* <SharedPost /> */}
-      </div>
-    </>
+    </div>
   );
 }
 export default Welcome;
