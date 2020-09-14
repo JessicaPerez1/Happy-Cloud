@@ -17,9 +17,6 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Link
-      </Link>
       {new Date().getFullYear()}
     </Typography>
   );
@@ -71,7 +68,7 @@ const Signup = () => {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>{/* <LockOutlinedIcon /> */}</Avatar>
+        <Avatar className={classes.avatar}></Avatar>
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
