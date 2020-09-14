@@ -8,11 +8,14 @@ import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
   buttonBox: {
-    height: "70px"
+    height: "70px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   button: {
-    background: "#20B2AA"
-
+    background: "#20B2AA",
+    marginTop: theme.spacing(2),
   },
   generatedCloud: {
     margin: "auto",
@@ -57,12 +60,10 @@ function generateCloud() {
     let generatedWords = [];
     API.getPosts(userId)
       .then((results) => {
-        console.log(results);
 
         results.data.filter((element) => {
           generatedWords.push(element.post);
         });
-        console.log(generatedWords);
         const finalWords = generatedWords.join(" ");
         runCloud(finalWords);
       })
