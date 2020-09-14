@@ -4,18 +4,14 @@ import { Link, useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
 function generateCloud() {
-  const history = useHistory()
+  const history = useHistory();
 
   const handleCloudPage = () => {
-    history.push("/cloud")
-  }
+    history.push("/cloud");
+  };
   return (
     <div>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={handleCloudPage}
-      >
+      <Button variant="contained" color="primary" onClick={handleCloudPage}>
         <Link to="/cloud"> Generate your Cloud Page </Link>
       </Button>
     </div>

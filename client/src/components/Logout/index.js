@@ -4,7 +4,7 @@ import { LOGOUT } from "../../utils/actions";
 import { useHistory } from "react-router-dom";
 
 const myStyle = {
-  float: "right",
+  marginLeft: "20px",
 };
 const Logout = () => {
   const [state, dispatch] = useGlobalContext();
