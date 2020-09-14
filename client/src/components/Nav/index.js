@@ -31,14 +31,16 @@ function Nav() {
   const classes = useStyles();
   const history = useHistory();
 
-  const handleHistoryClick = () => {
-    history.push("/history");
-    console.log("you've been redirected to history page");
-  };
   const handleProfileClick = () => {
     history.push("/profile");
     console.log("you've been redirected to Profile page");
   };
+
+  const handleCloudClick = () => {
+    history.push("/cloud");
+    console.log("you've been redirected to history page");
+  };
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -47,8 +49,8 @@ function Nav() {
             Happy Cloud
           </Typography>
           <Typography variant="h8" className={classes.title}>
-            <Button onClick={handleHistoryClick}>History</Button>
             <Button onClick={handleProfileClick}>Profile</Button>
+            <Button onClick={handleCloudClick}>Cloud</Button>
           </Typography>
           <Button color="inherit">
             <Logout />
