@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 // import { LOADING, UPDATE_POSTS } from "../../utils/actions";
 import { Button } from "@material-ui/core";
 import API from "../utils/API";
+import Nav from "../components/Nav";
 
 function generateCloud() {
   const [svgFile, setSvgFile] = useState();
@@ -50,7 +51,7 @@ function generateCloud() {
   }
   return (
     <div>
-      {/* <Link to="/editpage"> */}
+      <Nav />
       <Link to="/cloud"> Generate your Cloud Page </Link>
       <Button
         variant="contained"

@@ -1,0 +1,10 @@
+.button {
+  background-color: #66cdaa;
+  border-radius: 0.4rem;
+  float: right;
+  display: inline-flex;
+}
+
+.loginbutton {
+  color: grey;
+}
