@@ -24,7 +24,6 @@ function Copyright() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -48,7 +47,7 @@ export default function SignIn() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const history = useHistory();
-  //SET USER LOGIN INFO TO LOCALSTORAGE
+
   const setLocalStorage = (user) => {
     console.log(user);
     const storageInfo = [];
@@ -70,13 +69,6 @@ export default function SignIn() {
   };
   const handleLogin = (event) => {
     event.preventDefault();
-    if (emailRef === "") {
-      alert("Message can not be blank");
-    } else if (passwordRef === "") {
-      alert("Password can not be blank");
-    } else {
-      alert("success");
-    }
     doLogin();
     console.log("you’ve logged in");
     history.push("/profile");
