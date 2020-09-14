@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Nav from "../components/Nav";
 import Prompt from "../components/Prompt";
 import HistoryList from "../components/HistoryList";
-import DailyPost from "../components/DailyPost";
 import WeekHistory from "../components/WeekHistory";
 import GenerateCloud from "../components/GenerateCloud";
 
