@@ -113,11 +113,6 @@ function Prompt() {
       </form>
     </Container>
   );
-
-  //submit button onClick => handleFormSubmit, save info to db
-  //include DailyPost component (generated card)
 }
 
 export default Prompt;
-
-//include Prompt in the profile page
