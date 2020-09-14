@@ -15,18 +15,6 @@ import Typography from "@material-ui/core/Typography";
 
 import "./style.css";
 
-// const useStyles = makeStyles(() => ({
-//   root: {
-//     backgroundImage:
-//       "url(https://images.unsplash.com/photo-1500491460312-c32fc2dbc751?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60)",
-//     backgroundSize: "100%",
-//     backgroundRepeat: "repeat",
-//     width: "100%",
-//     height: "100%",
-//     flexGrow: 1,
-//   },
-// }));
-
 const MyContainer = styled(Container)({
   color: "#20B2AA",
   margin: "0",
@@ -35,13 +23,14 @@ const MyCard = styled(Card)({
   width: "100%",
   height: "350px",
   color: "black",
-  backgroundColor: "0, 0, 0, 0.2",
+  backgroundColor: "transparent",
+  opacity: "0.6",
 });
 
 function AppDescription() {
   return (
     <MyContainer>
-      <div>
+      <div className="happycloud">
         <Typography gutterBottom variant="h2" component="h2">
           HAPPY CLOUD
         </Typography>
