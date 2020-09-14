@@ -6,10 +6,13 @@ import { styled } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-// import "./style.css";
+import "./style.css";
 
 const MyCard = styled(Card)({
   width: "50%",
+  margin: "0 auto",
+  marginTop: "15px",
+  borderStyle: "2px solid black",
 });
 
 function HistoryList() {
