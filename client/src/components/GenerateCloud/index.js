@@ -8,26 +8,25 @@ import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
   buttonBox: {
-    height: "70px",
+    height: "100px",
+    marginTop: "20px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
   },
   button: {
-    background: "#20B2AA",
+    background: "",
     marginTop: theme.spacing(2),
+    color: "#02AEB1"
   },
   generatedCloud: {
     margin: "auto",
     display: "block",
-    height: "400px",
-    width: "400px",
+    height: "600px",
+    width: "600px",
     border: "2px solid grey",
     borderRadius: "16px"
   },
-  cloudDiv: {
-
-  }
 }));
 
 function generateCloud() {
@@ -73,14 +72,17 @@ function generateCloud() {
     <div>
       <Box className={classes.buttonBox}>
         <Button
-          variant="contained"
+          variant="outlined"
           onClick={handleCloudGenerator}
+          className={classes.button}
         >
           Generate Cloud
       </Button>
       </Box>
+      <div className={classes.generatedCloud}>
+        {ReactHtmlParser(svgFile)}
+      </div>
 
-      <div className={classes.cloudDiv}><Box className={classes.generatedCloud}> {ReactHtmlParser(svgFile)} </Box></div>
 
 
     </div>
