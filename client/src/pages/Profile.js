@@ -14,7 +14,6 @@ function Profile() {
   return (
     <div>
       <Nav />
-      <p>Congrats! You're logged in.</p>
       <Prompt />
       <HistoryList />
       <GenerateCloud />
