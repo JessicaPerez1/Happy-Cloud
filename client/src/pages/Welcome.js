@@ -6,8 +6,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundImage:
       "url(https://images.unsplash.com/photo-1500491460312-c32fc2dbc751?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60)",
-    backgroundSize: "100%",
-    backgroundRepeat: "repeat",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
     width: "100%",
     height: "100%",
     flexGrow: 1,
