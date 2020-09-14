@@ -15,7 +15,6 @@ import { TextField } from "@material-ui/core";
 const useStyles = makeStyles({
   root: {
     minWidth: 300,
-    backgroundColor: "#02dee1",
   },
   title: {
     fontSize: 21,
@@ -24,10 +23,22 @@ const useStyles = makeStyles({
   question: {
     fontSize: 28,
     fontWeight: "bold",
-    color: "black",
+    color: "#3B3C3C",
   },
   textfield: {
     width: "300px",
+    color: "#017778",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  button: {
+    backgroundColor: "#66cdaa",
+    border: "0px solid lightgray",
+    boxShadow: "2px 2px 2px 2px grey",
+    borderRadius: "0.4rem",
   },
 });
 
@@ -121,7 +132,9 @@ function Prompt() {
           onChange={handleInputChange}
           inputRef={postRef}
         />
-        <button onClick={handlePostSubmit}>Submit</button>
+        <button className={classes.button} onClick={handlePostSubmit}>
+          Submit
+        </button>
       </form>
     </Container>
   );
