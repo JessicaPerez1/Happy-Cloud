@@ -33,9 +33,9 @@ const MyContainer = styled(Container)({
 });
 const MyCard = styled(Card)({
   width: "100%",
-  height: "150px",
-  color: "white",
-  background: "none",
+  height: "350px",
+  color: "black",
+  backgroundColor: "0, 0, 0, 0.2",
 });
 
 function AppDescription() {
