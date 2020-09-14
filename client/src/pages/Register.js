@@ -1,30 +1,15 @@
-import React, { useRef } from "react";
-import { useHistory } from "react-router-dom";
-import axios from "axios";
+import React from "react";
 import Signup from "../components/Signup";
 
+const styles = {
+  container: {
+    backgroundImage: "url(https://images.unsplash.com/photo-1500491460312-c32fc2dbc751?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60)"
+  }
+}
 const Register = () => {
-  const regEmailRef = useRef();
-  const regPasswordRef = useRef();
-  const history = useHistory();
 
-  const doSignup = async () => {
-    const { data } = await axios.post("/auth/register", {
-      email: regEmailRef.current.value,
-      password: regPasswordRef.current.value,
-    });
-
-    console.log(data);
-  };
-
-  const handleSignup = (e) => {
-    e.preventDefault();
-    console.log("you've signed up");
-    doSignup();
-    history.push("/login");
-  };
   return (
-    <div>
+    <div className={styles.container}>
       <Signup />
     </div>
   );
