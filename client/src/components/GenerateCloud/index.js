@@ -14,6 +14,7 @@ function generateCloud() {
       <Button variant="contained" color="primary" onClick={handleCloudPage}>
         <Link to="/cloud"> Generate your Cloud Page </Link>
       </Button>
+
     </div>
   );
 }

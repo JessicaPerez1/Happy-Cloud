@@ -1,6 +1,6 @@
 // button to click to generate word cloud
 import React, { useState } from "react";
-import Nav from "../components/Nav";
+import ReactHtmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
 // import { LOADING, UPDATE_POSTS } from "../../utils/actions";
 import { Button } from "@material-ui/core";
@@ -13,10 +13,11 @@ function generateCloud() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("root").innerHTML = this.responseText;
+        // setSvgFile(this.response)
+        return this.response;
       }
-      console.log("svg", this.responseText);
-      setSvgFile(this.responseText);
+      console.log("svg", this.response);
+      setSvgFile(this.response);
       // const svg = this.responseText
     };
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -49,7 +50,7 @@ function generateCloud() {
   }
   return (
     <div>
-      <Nav />
+      {/* <Link to="/editpage"> */}
       <Link to="/cloud"> Generate your Cloud Page </Link>
       <Button
         variant="contained"
@@ -58,8 +59,7 @@ function generateCloud() {
       >
         Generate Cloud
       </Button>
-      <div className="Svg">{svgFile}</div>
-      {/* </Link> */}
+      <div> {ReactHtmlParser(svgFile)} </div>
     </div>
   );
 }
