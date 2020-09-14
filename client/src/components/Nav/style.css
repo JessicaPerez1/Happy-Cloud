@@ -1,0 +1,16 @@
+#navbar {
+  background-image: url("https://images.unsplash.com/photo-1500491460312-c32fc2dbc751?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60");
+}
+
+#profile,
+#cloud-button {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: rgb(16, 155, 155);
+  font-weight: bold;
+}
+
+#cloud {
+  font-family: "Ranchers", cursive;
+  color: rgb(16, 155, 155);
+}
