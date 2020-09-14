@@ -9,10 +9,12 @@ import Typography from "@material-ui/core/Typography";
 import "./style.css";
 
 const MyCard = styled(Card)({
-  width: "50%",
-  margin: "0 auto",
+  width: "32%",
   marginTop: "15px",
+  marginLeft: "5px",
   borderStyle: "2px solid black",
+  float: "left",
+  backgroundColor: "teal",
 });
 
 function HistoryList() {
@@ -46,7 +48,7 @@ function HistoryList() {
     <div>
       {state.posts.map((post) => (
         <MyCard>
-          <CardContent>
+          <CardContent className="card">
             <Typography gutterBottom variant="h5" component="h2">
               DATE OF THE POST:
             </Typography>
