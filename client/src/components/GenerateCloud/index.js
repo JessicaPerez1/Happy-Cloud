@@ -18,6 +18,7 @@ function generateCloud() {
       >
         <Link to="/cloud"> Generate your Cloud Page </Link>
       </Button>
+
     </div>
   );
 }
