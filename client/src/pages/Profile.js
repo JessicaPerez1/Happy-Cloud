@@ -1,17 +1,25 @@
 //user's profile page
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Nav from "../components/Nav";
 import Prompt from "../components/Prompt";
 import HistoryList from "../components/HistoryList";
-import GenerateCloud from "../components/GenerateCloud";
+import { Link, useHistory } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 function Profile() {
+  const history = useHistory();
+  const handleCloudPage = () => {
+    history.push("/cloud");
+  };
+
   return (
     <div>
       <Nav />
       <Prompt />
       <HistoryList />
-      <GenerateCloud />
+      <Button variant="contained" color="primary" onClick={handleCloudPage}>
+        <Link to="/cloud"> Generate your Cloud Page </Link>
+      </Button>
     </div>
   );
 }
