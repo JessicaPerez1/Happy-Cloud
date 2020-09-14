@@ -13,12 +13,10 @@ function generateCloud() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        // setSvgFile(this.response)
         return this.response;
       }
-      console.log("svg", this.response);
       setSvgFile(this.response);
-      // const svg = this.responseText
+
     };
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     xhttp.open(
