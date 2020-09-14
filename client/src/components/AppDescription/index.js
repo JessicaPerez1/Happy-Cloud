@@ -12,14 +12,14 @@ import Typography from "@material-ui/core/Typography";
 
 const MyContainer = styled(Container)({
   width: "100%",
-  height: "30px",
+  height: "500px",
   background: "none",
   color: "pink",
   marginBottom: "30px",
 });
 const MyCard = styled(Card)({
   width: "100%",
-  height: "150px",
+  height: "350px",
   backgroundImage:
     "url(https://images.unsplash.com/photo-1463043254199-7a3efd782ad1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60)",
   backgroundSize: "100%",
@@ -38,7 +38,7 @@ function AppDescription() {
         <CardActionArea>
           <CardMedia title="Positive message" />
           <CardContent>
-            <Typography variant="h5" color="textSecondary" component="p">
+            <Typography variant="h5" component="p">
               This positivity share-space is a way to keep track of at least one
               thing you are grateful for every single day and gives you an
               opportunity to reflect on the progress you've made when you hit
