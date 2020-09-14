@@ -27,11 +27,15 @@ const MyCard = styled(Card)({
   opacity: "0.6",
 });
 
+const fontStyle = {
+  fontFamily: "Ranchers",
+};
+
 function AppDescription() {
   return (
     <MyContainer>
       <div className="happycloud">
-        <Typography gutterBottom variant="h2" component="h2">
+        <Typography gutterBottom variant="h2" component="h2" style={fontStyle}>
           HAPPY CLOUD
         </Typography>
         <button className="button">
@@ -45,7 +49,7 @@ function AppDescription() {
         <CardActionArea>
           <CardMedia title="Positive message" />
           <CardContent>
-            <Typography variant="h5" component="p">
+            <Typography variant="h5" component="p" className="description">
               This positivity share-space is a way to keep track of at least one
               thing you are grateful for every single day and gives you an
               opportunity to reflect on the progress you've made when you hit
