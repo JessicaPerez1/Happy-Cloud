@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppDescription from "../components/AppDescription";
+import DailyQuote from "../components/DailyQuote";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,6 +21,7 @@ function Welcome() {
   return (
     <div className={classes.root}>
       <AppDescription />
+      <DailyQuote />
     </div>
   );
 }

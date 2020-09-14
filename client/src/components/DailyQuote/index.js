@@ -1,31 +1,39 @@
-//card generated with the user's word of the day
-//include in profile page
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import quotes from "../../quotes.json";
 
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
   title: {
     fontSize: 14,
   },
-  pos: {
-    marginBottom: 12,
+  body: {
+    color: "#20B2AA",
   },
 });
 
 export default function DailyPost() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  const [quoteState, setQuoteState] = useState({
+    quotes: quotes,
+  });
+  console.log("Current state", quoteState);
+  const getQuotes = () => {
+    let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    console.log(randomQuote);
+    setQuoteState({
+      quotes: randomQuote,
+    });
+  };
+
+  useEffect(() => {
+    getQuotes();
+  }, []);
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -35,18 +43,14 @@ export default function DailyPost() {
           color="textSecondary"
           gutterBottom
         >
-          Sample Card - Grateful Post of the Day:
+          Grateful Post of the Day:
         </Typography>
-        <Typography variant="h5" component="h2">
-          Word1
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          Date
+        <Typography className={classes.body} variant="h5" component="h2">
+          {quoteState.quotes.quote}
         </Typography>
         <Typography variant="body2" component="p">
-          -Owner
+          {quoteState.quotes.source}
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
     </Card>
