@@ -1,15 +1,24 @@
 import React from "react";
 import Signup from "../components/Signup";
+import { makeStyles } from "@material-ui/core/styles";
 
-const styles = {
-  container: {
-    backgroundImage: "url(https://images.unsplash.com/photo-1500491460312-c32fc2dbc751?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60)"
-  }
-}
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundImage:
+      "url(https://images.unsplash.com/photo-1500491460312-c32fc2dbc751?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60)",
+    backgroundSize: "100%",
+    backgroundRepeat: "repeat",
+    width: "100%",
+    height: "100%",
+    flexGrow: 1,
+    marginBottom: theme.spacing(2),
+  },
+}));
+
 const Register = () => {
-
+  const classes = useStyles();
   return (
-    <div className={styles.container}>
+    <div className={classes.root}>
       <Signup />
     </div>
   );
