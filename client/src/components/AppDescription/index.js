@@ -7,9 +7,7 @@ import { styled } from "@material-ui/core/styles";
 // import { makeStyles } from "@material-ui/core/styles";
 
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 
@@ -21,10 +19,14 @@ const MyContainer = styled(Container)({
 });
 const MyCard = styled(Card)({
   width: "100%",
-  height: "350px",
+  height: "200px",
   color: "black",
   backgroundColor: "transparent",
-  opacity: "0.6",
+  opacity: "0.8",
+  display: "flex",
+  alignItems: "center",
+  margin: "0 auto",
+  marginBottom: "2rem",
 });
 
 const fontStyle = {
@@ -35,7 +37,7 @@ function AppDescription() {
   return (
     <MyContainer>
       <div className="happycloud">
-        <Typography gutterBottom variant="h2" component="h2" style={fontStyle}>
+        <Typography gutterBottom variant="h3" component="h3" style={fontStyle}>
           HAPPY CLOUD
         </Typography>
         <button className="button">
@@ -46,18 +48,15 @@ function AppDescription() {
       </div>
 
       <MyCard>
-        <CardActionArea>
-          <CardMedia title="Positive message" />
-          <CardContent>
-            <Typography variant="h5" component="p" className="description">
-              This positivity share-space is a way to keep track of at least one
-              thing you are grateful for every single day and gives you an
-              opportunity to reflect on the progress you've made when you hit
-              certain milestones. Generate your own word cloud to spread and
-              post positive energy on social media.
-            </Typography>
-          </CardContent>
-        </CardActionArea>
+        <CardContent className="description">
+          <Typography variant="h5" component="p">
+            This positivity share-space is a way to keep track of at least one
+            thing you are grateful for every single day and gives you an
+            opportunity to reflect on the progress you've made when you hit
+            certain milestones. Generate your own word cloud to spread and post
+            positive energy on social media.
+          </Typography>
+        </CardContent>
       </MyCard>
     </MyContainer>
   );
