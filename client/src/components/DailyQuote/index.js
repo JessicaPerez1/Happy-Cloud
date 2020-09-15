@@ -8,12 +8,18 @@ import quotes from "../../quotes.json";
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
+    maxWidth: "85%",
+    margin: "0 auto",
+    borderRadius: "0.4",
+    backgroundColor: "transparent",
   },
   title: {
-    fontSize: 14,
+    fontSize: 16,
   },
   body: {
-    color: "#20B2AA",
+    color: "#044572",
+    textAlign: "left",
+    fontSize: "2rem",
   },
 });
 
@@ -45,10 +51,10 @@ export default function DailyPost() {
         >
           Grateful Post of the Day:
         </Typography>
-        <Typography className={classes.body} variant="h5" component="h2">
+        <Typography className={classes.body} component="h2">
           {quoteState.quotes.quote}
         </Typography>
-        <Typography variant="body2" component="p">
+        <Typography variant="body2" component="p" color="textSecondary">
           {quoteState.quotes.source}
           <br />
         </Typography>

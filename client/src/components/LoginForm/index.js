@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: "#008080",
+    backgroundColor: "#044572",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+  },
+  reg: {
+    color: "#2883C2",
   },
 }));
 
@@ -72,7 +75,7 @@ export default function SignIn() {
     doLogin();
     console.log("you’ve logged in");
     history.push("/profile");
-  }
+  };
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -119,7 +122,12 @@ export default function SignIn() {
             <Grid item>
               <p>
                 Not registered yet?
-                <Button color="primary"><Link to="/register">Register now</Link></Button>.
+                <Button>
+                  <Link className={classes.reg} to="/register">
+                    Register now
+                  </Link>
+                </Button>
+                .
               </p>
             </Grid>
           </Grid>
