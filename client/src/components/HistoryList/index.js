@@ -9,7 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import "./style.css";
 
 const MyCard = styled(Card)({
-  width: "32%",
+  width: "30%",
   marginTop: "15px",
   marginLeft: "5px",
   float: "left",

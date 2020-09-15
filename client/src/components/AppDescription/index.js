@@ -15,16 +15,16 @@ import "./style.css";
 
 const MyContainer = styled(Container)({
   color: "#0767A8",
-  margin: "0",
+  margin: "0 auto",
+  paddingTop: "10px",
 });
 const MyCard = styled(Card)({
   width: "100%",
-  height: "200px",
+  height: "6rems",
   backgroundColor: "transparent",
   opacity: "95%",
   display: "flex",
   alignItems: "center",
-  margin: "0 auto",
   marginBottom: "2rem",
   color: "#044572",
   fontFamily: `"Ranchers", "cursive"`,
@@ -37,16 +37,16 @@ const fontStyle = {
 function AppDescription() {
   return (
     <MyContainer>
-      <div className="happycloud">
-        <Typography gutterBottom variant="h3" component="h3" style={fontStyle}>
-          Happy Cloud
-        </Typography>
-        <button className="button">
-          <Link className="loginbutton" to="/login">
-            LOGIN HERE
-          </Link>
-        </button>
-      </div>
+      {/* <div className="happycloud"> */}
+      <Typography gutterBottom variant="h2" component="h3" style={fontStyle}>
+        Happy Cloud
+      </Typography>
+      <button className="button">
+        <Link className="loginbutton" to="/login">
+          LOGIN HERE
+        </Link>
+      </button>
+      {/* </div> */}
 
       <MyCard>
         <CardContent className="description">
