@@ -18,7 +18,7 @@ function Profile() {
       <Prompt />
       <HistoryList />
       <Button variant="contained" color="primary" onClick={handleCloudPage}>
-        <Link to="/cloud"> Generate your Cloud Page </Link>
+        <Link> Generate your Cloud Page </Link>
       </Button>
     </div>
   );
