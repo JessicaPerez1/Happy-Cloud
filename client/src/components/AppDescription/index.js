@@ -39,7 +39,7 @@ function AppDescription() {
     <MyContainer>
       <div className="happycloud">
         <Typography gutterBottom variant="h3" component="h3" style={fontStyle}>
-          HAPPY CLOUD
+          Happy Cloud
         </Typography>
         <button className="button">
           <Link className="loginbutton" to="/login">
@@ -54,8 +54,8 @@ function AppDescription() {
             This positivity share-space is a way to keep track of at least one
             thing you are grateful for every single day and gives you an
             opportunity to reflect on the progress you've made when you hit
-            certain milestones. Generate your own word cloud to spread and post
-            positive energy on social media.
+            certain milestones. Generate your own <strong>WORD CLOUD</strong> to
+            spread and post positive energy on social media.
           </Typography>
         </CardContent>
       </MyCard>

@@ -35,7 +35,7 @@
 
   - [Marian GUDE](https://github.com/mkgude)
   - [Mike HABER](https://github.com/miike7687)
-  - [James KIM]()
+  - [James KIM](https://github.com/jyk524)
   - [Jessica PEREZ](https://github.com/JessicaPerez1)
   - [David WHITE WOLF]()
 
