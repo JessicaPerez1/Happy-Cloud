@@ -35,7 +35,10 @@ function HistoryList() {
 
     API.getPosts(userId)
       .then((results) => {
-        console.log(results.data[0].date.slice(0, 10));
+        console.log(results.data);
+        const dateInfo = results.data[0].date.slice(0, 10);
+        console.log(dateInfo);
+        // console.log(results.data[0].date.slice(0, 10));
         dispatch({
           type: UPDATE_POSTS,
           posts: results.data,
@@ -66,7 +69,7 @@ function HistoryList() {
               component="p"
               id="date"
             >
-              {post.date.slice(0, 10)}
+              {post.date}
             </Typography>
             <Typography gutterBottom variant="h5" component="h2" id="wordtitle">
               Grateful For:
