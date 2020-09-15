@@ -6,7 +6,7 @@ import DailyQuote from "../components/DailyQuote";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundImage:
-      "url(https://images.unsplash.com/photo-1500491460312-c32fc2dbc751?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60)",
+      "url(https://64.media.tumblr.com/d54a9d32332efba6014646d1320e941f/tumblr_ovzced70jc1t5wz6ro1_1280.jpg)",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     width: "100%",

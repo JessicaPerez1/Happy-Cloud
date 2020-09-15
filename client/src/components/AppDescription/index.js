@@ -14,19 +14,20 @@ import Typography from "@material-ui/core/Typography";
 import "./style.css";
 
 const MyContainer = styled(Container)({
-  color: "#20B2AA",
+  color: "#0767A8",
   margin: "0",
 });
 const MyCard = styled(Card)({
   width: "100%",
   height: "200px",
-  color: "black",
   backgroundColor: "transparent",
-  opacity: "0.8",
+  opacity: "95%",
   display: "flex",
   alignItems: "center",
   margin: "0 auto",
   marginBottom: "2rem",
+  color: "#044572",
+  fontFamily: `"Ranchers", "cursive"`,
 });
 
 const fontStyle = {

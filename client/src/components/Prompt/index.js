@@ -15,6 +15,7 @@ import { TextField } from "@material-ui/core";
 const useStyles = makeStyles({
   root: {
     minWidth: 300,
+    marginTop: "1rem",
   },
   title: {
     fontSize: 21,
@@ -103,10 +104,6 @@ function Prompt() {
   }
   return (
     <Container maxWidth="sm">
-      {/* <Typography
-        component="div"
-        style={{ backgroundColor: "white", height: "10vh" }}
-      /> */}
       <Card className={classes.root}>
         <CardContent>
           <Typography className={classes.title} gutterBottom>
@@ -117,7 +114,9 @@ function Prompt() {
             variant="body2"
             component="p"
           >
-            In 1 word - What are you thankful for today?
+            In 1 word -
+            <br />
+            What are you thankful for today?
           </Typography>
         </CardContent>
       </Card>
