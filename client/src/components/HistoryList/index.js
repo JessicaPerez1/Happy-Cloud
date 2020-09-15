@@ -12,9 +12,13 @@ const MyCard = styled(Card)({
   width: "32%",
   marginTop: "15px",
   marginLeft: "5px",
-  borderStyle: "2px solid black",
   float: "left",
   backgroundColor: "teal",
+  marginBottom: "15px",
+});
+
+const MyContent = styled(CardContent)({
+  borderStyle: "2px solid black",
 });
 
 function HistoryList() {
@@ -48,7 +52,7 @@ function HistoryList() {
     <div>
       {state.posts.map((post) => (
         <MyCard>
-          <CardContent className="card">
+          <MyContent>
             <Typography gutterBottom variant="h5" component="h2">
               DATE OF THE POST:
             </Typography>
@@ -61,7 +65,7 @@ function HistoryList() {
             <Typography variant="body2" color="textSecondary" component="p">
               {post.post}
             </Typography>
-          </CardContent>
+          </MyContent>
         </MyCard>
       ))}
     </div>
