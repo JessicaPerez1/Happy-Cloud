@@ -1,8 +1,9 @@
 #button {
-  background-color: #c6cdca;
-  border: 0px solid lightgray;
-  box-shadow: 2px 2px 2px 2px grey;
+  background-color: transparent;
+  border: 1px solid  #0768a875;
   border-radius: 0.4rem;
   float: right;
   display: inline-flex;
+  color: #0768a875;	
+  
 }
