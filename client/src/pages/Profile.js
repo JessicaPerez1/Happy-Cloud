@@ -31,13 +31,13 @@ function Profile() {
     <div>
       <Nav />
       <Prompt />
-      <HistoryList />
       <Button
         onClick={handleCloudPage}
         style={buttonStyle}
       >
-        <Link stlye={linkStyle}> Click Here for your Cloud Page </Link>
+        <Link stlye={linkStyle}> Click Here for your WordCloud </Link>
       </Button>
+      <HistoryList />
     </div>
   );
 }

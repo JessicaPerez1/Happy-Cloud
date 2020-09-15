@@ -47,7 +47,7 @@ function AppDescription() {
           </Link>
         </button>
         <Typography gutterBottom variant="h3" component="h3" style={fontStyle}>
-          HAPPY CLOUD
+          Happy Cloud
         </Typography>
       </div>
 
