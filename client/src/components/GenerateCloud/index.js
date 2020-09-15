@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import { styled } from '@material-ui/core/styles';
 
+// Button
 const MyButton = styled(Button)({
   background: 'linear-gradient(45deg, #49B0EB 30%, #EAEAF8 90%)',
   border: 0,
@@ -14,6 +15,11 @@ const MyButton = styled(Button)({
   padding: '0 30px',
 })
 
+// Text Color
+const MyLink = styled(Link)({
+  color: 'black'
+}) 
+
 function generateCloud() {
   const history = useHistory();
 
@@ -22,8 +28,8 @@ function generateCloud() {
   };
   return (
     <div>
-      <MyButton variant="contained" color="primary" onClick={handleCloudPage}>
-        <Link to="/cloud"> Generate your Cloud Page </Link>
+      <MyButton class="btn btn-two" variant="contained" color="primary" onClick={handleCloudPage}>
+        <MyLink to="/cloud"> Generate your Cloud Page </MyLink>
       </MyButton>
     </div>
   );
