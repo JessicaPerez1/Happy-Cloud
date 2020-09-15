@@ -4,7 +4,8 @@ import ReactHtmlParser from "react-html-parser";
 import { Button } from "@material-ui/core";
 import API from "../../utils/API";
 import { makeStyles } from "@material-ui/core/styles";
-import Box from '@material-ui/core/Box';
+import Box from "@material-ui/core/Box";
+import "./style.css";
 
 const useStyles = makeStyles((theme) => ({
   buttonBox: {
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     background: "",
     marginTop: theme.spacing(2),
-    color: "#02AEB1"
+    color: "#02AEB1",
   },
   generatedCloud: {
     margin: "auto",
@@ -25,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     height: "600px",
     width: "600px",
     border: "2px solid grey",
-    borderRadius: "16px"
+    borderRadius: "16px",
   },
 }));
 
@@ -40,7 +41,6 @@ function generateCloud() {
         return this.response;
       }
       setSvgFile(this.response);
-
     };
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     xhttp.open(
@@ -59,7 +59,6 @@ function generateCloud() {
     let generatedWords = [];
     API.getPosts(userId)
       .then((results) => {
-
         results.data.filter((element) => {
           generatedWords.push(element.post);
         });
@@ -77,14 +76,9 @@ function generateCloud() {
           className={classes.button}
         >
           Generate Cloud
-      </Button>
+        </Button>
       </Box>
-      <div className={classes.generatedCloud}>
-        {ReactHtmlParser(svgFile)}
-      </div>
-
-
-
+      <div className={classes.generatedCloud}>{ReactHtmlParser(svgFile)}</div>
     </div>
   );
 }
