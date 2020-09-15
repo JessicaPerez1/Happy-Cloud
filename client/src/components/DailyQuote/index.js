@@ -20,6 +20,7 @@ const useStyles = makeStyles({
     color: "#044572",
     textAlign: "left",
     fontSize: "2rem",
+    fontFamily: "cursive"
   },
 });
 

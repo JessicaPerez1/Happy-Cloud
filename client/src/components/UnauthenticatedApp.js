@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Welcome from "../pages/Welcome";
-// import Profile from "../pages/Profile";
+import About from "../pages/About";
 
 const UnauthenticatedApp = () => {
   return (
@@ -12,7 +12,7 @@ const UnauthenticatedApp = () => {
         <Route exact path="/" component={Welcome} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
-        {/* <Route exact path="/profiletest" component={Profile} /> */}
+        <Route exact path="/about" component={About} />
       </Switch>
     </Router>
   );
