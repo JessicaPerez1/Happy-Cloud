@@ -41,7 +41,7 @@ const useStyles = makeStyles({
     border: "0px solid lightgray",
     boxShadow: "2px 2px 2px 2px grey",
     borderRadius: "0.4rem",
-    fontSize: "1.5rem",
+    fontSize: "1rem",
   },
 });
 
