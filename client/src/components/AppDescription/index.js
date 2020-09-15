@@ -32,20 +32,23 @@ const MyCard = styled(Card)({
 
 const fontStyle = {
   fontFamily: "Ranchers",
+  color: "#0767A8",
+  fontSize: "60px",
+  textShadow: "2px 4px 3px rgba(0,0,0,0.3)"
 };
 
 function AppDescription() {
   return (
     <MyContainer>
       <div className="happycloud">
-        <Typography gutterBottom variant="h3" component="h3" style={fontStyle}>
-          HAPPY CLOUD
-        </Typography>
         <button className="button">
           <Link className="loginbutton" to="/login">
             LOGIN HERE
           </Link>
         </button>
+        <Typography gutterBottom variant="h3" component="h3" style={fontStyle}>
+          HAPPY CLOUD
+        </Typography>
       </div>
 
       <MyCard>
