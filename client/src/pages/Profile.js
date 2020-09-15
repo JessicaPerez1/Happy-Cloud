@@ -12,12 +12,23 @@ function Profile() {
     history.push("/cloud");
   };
 
+  const buttonStyle = {
+    clear: "both",
+    display: "block",
+    margin: "0 auto",
+  };
+
   return (
     <div>
       <Nav />
       <Prompt />
       <HistoryList />
-      <Button variant="contained" color="primary" onClick={handleCloudPage}>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleCloudPage}
+        style={buttonStyle}
+      >
         <Link> Generate your Cloud Page </Link>
       </Button>
     </div>
