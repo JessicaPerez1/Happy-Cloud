@@ -15,6 +15,7 @@ import { TextField } from "@material-ui/core";
 const useStyles = makeStyles({
   root: {
     minWidth: 300,
+    marginTop: "1rem",
   },
   title: {
     fontSize: 21,
@@ -26,8 +27,9 @@ const useStyles = makeStyles({
     color: "#3B3C3C",
   },
   textfield: {
-    width: "300px",
+    width: "100%",
     color: "#017778",
+    border: "0.3px solid lightgrey",
   },
   form: {
     display: "flex",
@@ -35,10 +37,11 @@ const useStyles = makeStyles({
     alignItems: "center",
   },
   button: {
-    backgroundColor: "#66cdaa",
+    backgroundColor: "#C3E2F7",
     border: "0px solid lightgray",
     boxShadow: "2px 2px 2px 2px grey",
     borderRadius: "0.4rem",
+    fontSize: "1.5rem",
   },
 });
 
@@ -103,10 +106,6 @@ function Prompt() {
   }
   return (
     <Container maxWidth="sm">
-      {/* <Typography
-        component="div"
-        style={{ backgroundColor: "white", height: "10vh" }}
-      /> */}
       <Card className={classes.root}>
         <CardContent>
           <Typography className={classes.title} gutterBottom>
@@ -117,25 +116,27 @@ function Prompt() {
             variant="body2"
             component="p"
           >
-            In 1 word - What are you thankful for today?
+            In 1 word -
+            <br />
+            What are you thankful for today?
           </Typography>
         </CardContent>
+        <form className={classes.form} noValidate autoComplete="off">
+          <TextField
+            className={classes.textfield}
+            id="outlined-basic"
+            label="Your WORD here"
+            type="text"
+            variant="outlined"
+            name="post"
+            onChange={handleInputChange}
+            inputRef={postRef}
+          />
+          <button className={classes.button} onClick={handlePostSubmit}>
+            Submit
+          </button>
+        </form>
       </Card>
-      <form className={classes.form} noValidate autoComplete="off">
-        <TextField
-          className={classes.textfield}
-          id="outlined-basic"
-          label="Your WORD here"
-          type="text"
-          variant="outlined"
-          name="post"
-          onChange={handleInputChange}
-          inputRef={postRef}
-        />
-        <button className={classes.button} onClick={handlePostSubmit}>
-          Submit
-        </button>
-      </form>
     </Container>
   );
 }

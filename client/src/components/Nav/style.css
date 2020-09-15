@@ -1,17 +1,22 @@
 #navbar {
-  background-image: url("https://images.unsplash.com/photo-1500491460312-c32fc2dbc751?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60");
+  background-image: url("https://64.media.tumblr.com/d54a9d32332efba6014646d1320e941f/tumblr_ovzced70jc1t5wz6ro1_1280.jpg");
+  background-size: cover;
+  background-repeat : no-repeat;
+  width: "100%";
+
 }
 
 #profile,
 #cloud-button {
-  font-size: 19px;
-  color: rgb(16, 155, 155);
+  font-size: 15px;
+  color: #0767A8;
   font-weight: bold;
   float: right;
 }
 
 #cloud {
   font-family: "Ranchers", cursive;
-  color: rgb(16, 155, 155);
-  font-size: 40px;
+  color:#0767A8;
+  font-size: 60px;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
