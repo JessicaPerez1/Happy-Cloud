@@ -15,18 +15,13 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
   },
-  button: {
-    background: "",
-    marginTop: theme.spacing(2),
-    color: "#02AEB1",
-  },
   generatedCloud: {
     margin: "auto",
     display: "block",
     height: "600px",
     width: "600px",
     border: "2px solid grey",
-    borderRadius: "16px",
+    borderRadius: "5px",
   },
 }));
 
@@ -71,11 +66,13 @@ function generateCloud() {
     <div>
       <Box className={classes.buttonBox}>
         <Button
-          variant="outlined"
           onClick={handleCloudGenerator}
           className={classes.button}
+          className="btn btn-two"
         >
-          Generate Cloud
+          Generate
+          <br /> 
+          Cloud
         </Button>
       </Box>
       <div className={classes.generatedCloud}>{ReactHtmlParser(svgFile)}</div>
