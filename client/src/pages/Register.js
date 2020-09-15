@@ -1,30 +1,24 @@
-import React, { useRef } from "react";
-import { useHistory } from "react-router-dom";
-import axios from "axios";
+import React from "react";
 import Signup from "../components/Signup";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundImage:
+      "url(https://64.media.tumblr.com/d54a9d32332efba6014646d1320e941f/tumblr_ovzced70jc1t5wz6ro1_1280.jpg)",
+    backgroundSize: "100%",
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+    height: "100%",
+    flexGrow: 1,
+    margin: 0
+  },
+}));
 
 const Register = () => {
-  const regEmailRef = useRef();
-  const regPasswordRef = useRef();
-  const history = useHistory();
-
-  const doSignup = async () => {
-    const { data } = await axios.post("/auth/register", {
-      email: regEmailRef.current.value,
-      password: regPasswordRef.current.value,
-    });
-
-    console.log(data);
-  };
-
-  const handleSignup = (e) => {
-    e.preventDefault();
-    console.log("you've signed up");
-    doSignup();
-    history.push("/login");
-  };
+  const classes = useStyles();
   return (
-    <div>
+    <div className={classes.root}>
       <Signup />
     </div>
   );

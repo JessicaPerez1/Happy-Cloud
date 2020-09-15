@@ -1,9 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { LOADING, UPDATE_POSTS } from "../../utils/actions";
-// import axios from "axios";
 import { usePostContext } from "../../utils/GlobalState";
-// import DailyPost from "../DailyPost";
 import { ADD_POST } from "../../utils/actions";
 import API from "../../utils/API";
 import Container from "@material-ui/core/Container";
@@ -19,12 +17,34 @@ const useStyles = makeStyles({
     minWidth: 300,
   },
   title: {
-    fontSize: 14,
+    fontSize: 21,
+    color: "darkgray",
+  },
+  question: {
+    fontSize: 28,
+    fontWeight: "bold",
+    color: "#3B3C3C",
+  },
+  textfield: {
+    width: "300px",
+    color: "#017778",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  button: {
+    backgroundColor: "#66cdaa",
+    border: "0px solid lightgray",
+    boxShadow: "2px 2px 2px 2px grey",
+    borderRadius: "0.4rem",
   },
 });
 
 //functional component
 function Prompt() {
+  const classes = useStyles();
   // const [promptState, setPromptState] = useState();
   const postRef = useRef();
   const userRef = useRef();
@@ -83,24 +103,27 @@ function Prompt() {
   }
   return (
     <Container maxWidth="sm">
-      <Typography
+      {/* <Typography
         component="div"
-        style={{ backgroundColor: "#cfe8fc", height: "10vh" }}
-      />
-      {/* //question of the day card */}
-      <Card className="root">
+        style={{ backgroundColor: "white", height: "10vh" }}
+      /> */}
+      <Card className={classes.root}>
         <CardContent>
-          <Typography className="title" color="textSecondary" gutterBottom>
+          <Typography className={classes.title} gutterBottom>
             Question of the Day
           </Typography>
-          <Typography variant="body2" component="p">
+          <Typography
+            className={classes.question}
+            variant="body2"
+            component="p"
+          >
             In 1 word - What are you thankful for today?
           </Typography>
         </CardContent>
       </Card>
-      {/* Form Submit */}
-      <form className="root" noValidate autoComplete="off">
+      <form className={classes.form} noValidate autoComplete="off">
         <TextField
+          className={classes.textfield}
           id="outlined-basic"
           label="Your WORD here"
           type="text"
@@ -109,15 +132,12 @@ function Prompt() {
           onChange={handleInputChange}
           inputRef={postRef}
         />
-        <button onClick={handlePostSubmit}>Submit</button>
+        <button className={classes.button} onClick={handlePostSubmit}>
+          Submit
+        </button>
       </form>
     </Container>
   );
-
-  //submit button onClick => handleFormSubmit, save info to db
-  //include DailyPost component (generated card)
 }
 
 export default Prompt;
-
-//include Prompt in the profile page

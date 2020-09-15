@@ -9,6 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Logout from "../Logout";
 import grey from "@material-ui/core/colors/grey";
+import "./style.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,24 +32,30 @@ function Nav() {
   const classes = useStyles();
   const history = useHistory();
 
-  const handleHistoryClick = () => {
-    history.push("/history");
-    console.log("you've been redirected to history page");
-  };
   const handleProfileClick = () => {
     history.push("/profile");
     console.log("you've been redirected to Profile page");
   };
+
+  const handleCloudClick = () => {
+    history.push("/cloud");
+    console.log("you've been redirected to history page");
+  };
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar className={classes.toolbar}>
-          <Typography variant="h5" className={classes.title}>
+        <Toolbar className={classes.toolbar} id="navbar">
+          <Typography variant="h5" className={classes.title} id="cloud">
             Happy Cloud
           </Typography>
           <Typography variant="h8" className={classes.title}>
-            <Button onClick={handleHistoryClick}>History</Button>
-            <Button onClick={handleProfileClick}>Profile</Button>
+            <Button onClick={handleProfileClick} id="profile">
+              Profile
+            </Button>
+            <Button onClick={handleCloudClick} id="cloud-button">
+              Cloud
+            </Button>
           </Typography>
           <Button color="inherit">
             <Logout />

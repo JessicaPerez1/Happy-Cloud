@@ -1,36 +1,84 @@
 // button to click to generate word cloud
-import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useState } from "react";
+import ReactHtmlParser from "react-html-parser";
 import { Button } from "@material-ui/core";
-import { styled } from '@material-ui/core/styles';
+import API from "../../utils/API";
+import { makeStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
+import "./style.css";
 
-// Button
-const MyButton = styled(Button)({
-  background: 'linear-gradient(45deg, #49B0EB 30%, #EAEAF8 90%)',
-  border: 0,
-  borderRadius: 3,
-  boxShadow: '0 3px 5px 2px rgba(105, 105, 135, .3)',
-  color: 'white',
-  height: 48,
-  padding: '0 30px',
-})
-
-// Text Color
-const MyLink = styled(Link)({
-  color: 'black'
-}) 
+const useStyles = makeStyles((theme) => ({
+  buttonBox: {
+    height: "100px",
+    marginTop: "20px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  button: {
+    background: "",
+    marginTop: theme.spacing(2),
+    color: "#02AEB1",
+  },
+  generatedCloud: {
+    margin: "auto",
+    display: "block",
+    height: "600px",
+    width: "600px",
+    border: "2px solid grey",
+    borderRadius: "16px",
+  },
+}));
 
 function generateCloud() {
-  const history = useHistory();
+  const classes = useStyles();
+  const [svgFile, setSvgFile] = useState();
 
-  const handleCloudPage = () => {
-    history.push("/cloud");
-  };
+  function runCloud(posts) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        return this.response;
+      }
+      setSvgFile(this.response);
+    };
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    xhttp.open(
+      "GET",
+      proxyurl + "https://quickchart.io/wordcloud?text=" + posts,
+      true
+    );
+    xhttp.send();
+    console.log("https://quickchart.io/wordcloud?text=" + posts);
+  }
+
+  function handleCloudGenerator() {
+    const user = JSON.parse(localStorage.getItem("data"));
+    console.log(user[0].id);
+    const userId = user[0].id;
+    let generatedWords = [];
+    API.getPosts(userId)
+      .then((results) => {
+        results.data.filter((element) => {
+          generatedWords.push(element.post);
+        });
+        const finalWords = generatedWords.join(" ");
+        runCloud(finalWords);
+      })
+      .catch((err) => console.log(err));
+  }
   return (
     <div>
-      <MyButton class="btn btn-two" variant="contained" color="primary" onClick={handleCloudPage}>
-        <MyLink to="/cloud"> Generate your Cloud Page </MyLink>
-      </MyButton>
+      <Box className={classes.buttonBox}>
+        <Button
+          variant="outlined"
+          onClick={handleCloudGenerator}
+          className={classes.button}
+        >
+          Generate Cloud
+        </Button>
+      </Box>
+      <div className={classes.generatedCloud}>{ReactHtmlParser(svgFile)}</div>
     </div>
   );
 }

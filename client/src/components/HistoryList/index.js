@@ -6,10 +6,19 @@ import { styled } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-// import "./style.css";
+import "./style.css";
 
 const MyCard = styled(Card)({
-  width: "50%",
+  width: "32%",
+  marginTop: "15px",
+  marginLeft: "5px",
+  float: "left",
+  backgroundColor: "teal",
+  marginBottom: "15px",
+});
+
+const MyContent = styled(CardContent)({
+  borderStyle: "2px solid black",
 });
 
 function HistoryList() {
@@ -43,7 +52,7 @@ function HistoryList() {
     <div>
       {state.posts.map((post) => (
         <MyCard>
-          <CardContent>
+          <MyContent>
             <Typography gutterBottom variant="h5" component="h2">
               DATE OF THE POST:
             </Typography>
@@ -56,7 +65,7 @@ function HistoryList() {
             <Typography variant="body2" color="textSecondary" component="p">
               {post.post}
             </Typography>
-          </CardContent>
+          </MyContent>
         </MyCard>
       ))}
     </div>
