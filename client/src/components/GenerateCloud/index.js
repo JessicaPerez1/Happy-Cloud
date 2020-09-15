@@ -32,7 +32,7 @@ function generateCloud() {
   function runCloud(posts) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 400) {
+      if (this.readyState == 4 && this.status == 200) {
         return this.response;
       }
       setSvgFile(this.response);
@@ -71,7 +71,7 @@ function generateCloud() {
           className="btn btn-two"
         >
           Generate
-          <br /> 
+          <br />
           Cloud
         </Button>
       </Box>

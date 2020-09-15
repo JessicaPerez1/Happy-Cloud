@@ -11,10 +11,21 @@ import Typography from "@material-ui/core/Typography";
 
 import "./style.css";
 
-const MyContainer = styled(Container)({
-  color: "#0767A8",
-  margin: "0",
-  marginBottom: "100px"
+// const MyContainer = styled(Container)({
+//   color: "#0767A8",
+//   margin: "0 auto",
+//   paddingTop: "10px",
+// });
+const MyCard = styled(Card)({
+  width: "100%",
+  height: "6rems",
+  backgroundColor: "transparent",
+  opacity: "95%",
+  display: "flex",
+  alignItems: "center",
+  marginBottom: "2rem",
+  color: "#044572",
+  fontFamily: `"Ranchers", "cursive"`,
 });
 
 const fontStyle = {
@@ -24,26 +35,35 @@ const fontStyle = {
   textShadow: "2px 4px 3px rgba(0,0,0,0.3)"
 };
 
-const about = {
-  color: "#0767A8"
-}
+// const about = {
+//   color: "#0767A8"
+// }
 
 function AppDescription() {
   return (
     <MyContainer>
-      <div className="happycloud">
-        <button className="button">
-          <Link className="loginbutton" to="/login">
-            LOGIN HERE
-          </Link>
-        </button>
-        <Typography gutterBottom variant="h3" component="h3" style={fontStyle}>
-          Happy Cloud
-        </Typography>
-        <Link className="about" style={about} to="/about">
-          about
-          </Link>
-      </div>
+      {/* <div className="happycloud"> */}
+      <Typography gutterBottom variant="h2" component="h3" style={fontStyle}>
+        Happy Cloud
+      </Typography>
+      <button className="button">
+        <Link className="loginbutton" to="/login">
+          LOGIN HERE
+        </Link>
+      </button>
+      {/* </div> */}
+
+      <MyCard>
+        <CardContent className="description">
+          <Typography variant="h5" component="p">
+            This positivity share-space is a way to keep track of at least one
+            thing you are grateful for every single day and gives you an
+            opportunity to reflect on the progress you've made when you hit
+            certain milestones. Generate your own <strong>WORD CLOUD</strong> to
+            spread and post positive energy on social media.
+          </Typography>
+        </CardContent>
+      </MyCard>
     </MyContainer>
   );
 }

@@ -53,7 +53,7 @@ export default function DailyPost() {
           Grateful Post of the Day:
         </Typography>
         <Typography className={classes.body} component="h2">
-          {quoteState.quotes.quote}
+          <em>{quoteState.quotes.quote}</em>
         </Typography>
         <Typography variant="body2" component="p" color="textSecondary">
           {quoteState.quotes.source}
