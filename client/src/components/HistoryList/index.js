@@ -13,7 +13,7 @@ const MyCard = styled(Card)({
   marginTop: "15px",
   marginLeft: "5px",
   float: "left",
-  backgroundColor: "teal",
+  backgroundColor: "#4E598C",
   marginBottom: "15px",
 });
 
@@ -35,6 +35,7 @@ function HistoryList() {
 
     API.getPosts(userId)
       .then((results) => {
+        console.log(results.data[0].date.slice(0, 10));
         dispatch({
           type: UPDATE_POSTS,
           posts: results.data,
@@ -53,16 +54,29 @@ function HistoryList() {
       {state.posts.map((post) => (
         <MyCard>
           <MyContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              DATE OF THE POST:
+            <Typography
+              gutterBottom
+              variant="h5"
+              component="h2"
+              id="datetitle"
+            ></Typography>
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              component="p"
+              id="date"
+            >
+              {post.date.slice(0, 10)}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {post.date}
+            <Typography gutterBottom variant="h5" component="h2" id="wordtitle">
+              Grateful For:
             </Typography>
-            <Typography gutterBottom variant="h5" component="h2">
-              WORD POSTED:
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              component="p"
+              id="word"
+            >
               {post.post}
             </Typography>
           </MyContent>

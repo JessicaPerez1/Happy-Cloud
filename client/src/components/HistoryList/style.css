@@ -1,1 +1,31 @@
+#datetitle,
+#wordtitle {
+  font-size: 15px;
+  text-align: left;
+  color: rgb(164, 160, 160);
+}
 
+#word {
+  color: rgb(216, 211, 211);
+  text-align: center;
+  font-size: 22px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#word:hover {
+  animation: blinker 1s linear infinite;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#date {
+  color: rgb(164, 160, 160);
+  font-size: 18px;
+  text-align: right;
+}
