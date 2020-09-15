@@ -12,10 +12,19 @@ function Profile() {
     history.push("/cloud");
   };
 
+  const linkStyle = {
+    color: "black"
+  }
+
   const buttonStyle = {
     clear: "both",
+    color: "black",
+    backgroundColor: "white",
     display: "block",
     margin: "0 auto",
+    border: "2px solid transparent",
+    borderImage: "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
+    borderImageSlice: "1",
   };
 
   return (
@@ -24,12 +33,10 @@ function Profile() {
       <Prompt />
       <HistoryList />
       <Button
-        variant="contained"
-        color="primary"
         onClick={handleCloudPage}
         style={buttonStyle}
       >
-        <Link> Generate your Cloud Page </Link>
+        <Link stlye={linkStyle}> Click Here for your Cloud Page </Link>
       </Button>
     </div>
   );
