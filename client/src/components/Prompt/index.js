@@ -9,14 +9,19 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import Tooltip from "@material-ui/core/Tooltip";
 import { TextField } from "@material-ui/core";
 
 //STYLING
+const longText = `
+We recommend 1 WORD A DAY, but you are able to add up to 15 characters maximum in the input field.
+`;
 const useStyles = makeStyles({
   root: {
     minWidth: 300,
     margin: "1rem",
-    padding: "1rem"
+    padding: "1rem",
   },
   title: {
     fontSize: 21,
@@ -43,7 +48,7 @@ const useStyles = makeStyles({
     boxShadow: "2px 2px 2px 2px #0768a875",
     borderRadius: "0.4rem",
     fontSize: "1rem",
-    marginTop: "1rem"
+    marginTop: "1rem",
   },
 });
 
@@ -110,16 +115,17 @@ function Prompt() {
     <Container maxWidth="sm">
       <Card className={classes.root}>
         <CardContent>
-          <Typography className={classes.title} gutterBottom>
-            Question of the Day
-          </Typography>
+          <Tooltip title={longText}>
+            <Button className={classes.title}>
+              Question of the Day <sup> ? </sup>
+            </Button>
+          </Tooltip>
+
           <Typography
             className={classes.question}
             variant="body2"
             component="p"
           >
-            In 1 word -
-            <br />
             What are you thankful for today?
           </Typography>
         </CardContent>
