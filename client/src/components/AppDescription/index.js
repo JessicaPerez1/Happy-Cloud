@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { styled } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import Container from "@material-ui/core/Container";
+import MyContainer from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 
 import "./style.css";
@@ -25,11 +25,9 @@ const MyCard = styled(Card)({
   alignItems: "center",
   marginBottom: "2rem",
   color: "#044572",
-  fontFamily: `"Ranchers", "cursive"`,
 });
 
 const fontStyle = {
-  fontFamily: "Ranchers",
   color: "#0767A8",
   fontSize: "100px",
   textShadow: "2px 4px 3px rgba(0,0,0,0.3)"
