@@ -1,6 +1,8 @@
 import React from "react";
 import LoginForm from "../components/LoginForm";
 import { makeStyles } from "@material-ui/core/styles";
+import HomeNav from "../components/HomeNav";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundImage:
@@ -18,6 +20,7 @@ const Login = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
+      <HomeNav />
       <LoginForm />
     </div>
   );

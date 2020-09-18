@@ -40,16 +40,6 @@ const about = {
 function AppDescription() {
   return (
     <MyContainer>
-      <button className="button">
-        <Link className="loginbutton" to="/login">
-          LOGIN HERE
-        </Link>
-      </button>
-      <button className="button">
-        <Link className="aboutbutton" to="/about">
-          ABOUT
-        </Link>
-      </button>
       <div className="happycloud">
         <Typography gutterBottom variant="h2" component="h3" style={fontStyle}>
           Happy Cloud
