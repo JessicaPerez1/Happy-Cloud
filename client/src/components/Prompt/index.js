@@ -15,7 +15,8 @@ import { TextField } from "@material-ui/core";
 const useStyles = makeStyles({
   root: {
     minWidth: 300,
-    marginTop: "1rem",
+    margin: "1rem",
+    padding: "1rem"
   },
   title: {
     fontSize: 21,
@@ -27,7 +28,7 @@ const useStyles = makeStyles({
     color: "#3B3C3C",
   },
   textfield: {
-    width: "100%",
+    width: "50%",
     color: "#017778",
     border: "0.3px solid lightgrey",
   },
@@ -37,11 +38,12 @@ const useStyles = makeStyles({
     alignItems: "center",
   },
   button: {
-    backgroundColor: "#C3E2F7",
-    border: "0px solid lightgray",
-    boxShadow: "2px 2px 2px 2px grey",
+    background: "transparent",
+    border: "0px solid #0768a875",
+    boxShadow: "2px 2px 2px 2px #0768a875",
     borderRadius: "0.4rem",
     fontSize: "1rem",
+    marginTop: "1rem"
   },
 });
 
