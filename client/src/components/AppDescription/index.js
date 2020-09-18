@@ -33,35 +33,28 @@ const fontStyle = {
   textShadow: "2px 4px 3px rgba(0,0,0,0.3)"
 };
 
-// const about = {
-//   color: "#0767A8"
-// }
+const about = {
+  color: "#0767A8"
+}
 
 function AppDescription() {
   return (
     <MyContainer>
-      {/* <div className="happycloud"> */}
-      <Typography gutterBottom variant="h2" component="h3" style={fontStyle}>
-        Happy Cloud
-      </Typography>
       <button className="button">
         <Link className="loginbutton" to="/login">
           LOGIN HERE
         </Link>
       </button>
-      {/* </div> */}
-
-      <MyCard>
-        <CardContent className="description">
-          <Typography variant="h5" component="p">
-            This positivity share-space is a way to keep track of at least one
-            thing you are grateful for every single day and gives you an
-            opportunity to reflect on the progress you've made when you hit
-            certain milestones. Generate your own <strong>WORD CLOUD</strong> to
-            spread and post positive energy on social media.
-          </Typography>
-        </CardContent>
-      </MyCard>
+      <button className="button">
+        <Link className="aboutbutton" to="/about">
+          ABOUT
+        </Link>
+      </button>
+      <div className="happycloud">
+        <Typography gutterBottom variant="h2" component="h3" style={fontStyle}>
+          Happy Cloud
+        </Typography>
+      </div>
     </MyContainer>
   );
 }

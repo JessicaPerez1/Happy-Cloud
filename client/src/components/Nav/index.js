@@ -39,6 +39,10 @@ function Nav() {
     history.push("/cloud");
     console.log("you've been redirected to history page");
   };
+  const handleResourcesClick = () => {
+    history.push("/resources");
+    console.log("you've been redirected to resources page");
+  };
 
   return (
     <div className={classes.root}>
@@ -53,6 +57,9 @@ function Nav() {
             </Button>
             <Button onClick={handleCloudClick} id="cloud-button">
               Cloud
+            </Button>
+            <Button onClick={handleResourcesClick} id="resources">
+              Resources
             </Button>
           </Typography>
           <Button color="inherit">
