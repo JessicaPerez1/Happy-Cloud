@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppDescription from "../components/AppDescription";
 import DailyQuote from "../components/DailyQuote";
+import HomeNav from "../components/HomeNav"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +23,7 @@ function Welcome() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
+      <HomeNav />
       <AppDescription />
       <DailyQuote />
       <div className={classes.div}></div>

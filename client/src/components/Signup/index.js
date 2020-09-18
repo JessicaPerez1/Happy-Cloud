@@ -1,11 +1,10 @@
 import React, { useRef } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 // import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -108,6 +107,19 @@ const Signup = () => {
           >
             Sign Up
           </Button>
+          <Grid container>
+            <Grid item>
+              <p>
+                Back to
+                <Button>
+                  <Link to="/login">
+                    login page
+                  </Link>
+                </Button>
+                .
+              </p>
+            </Grid>
+          </Grid>
         </form>
       </div>
       <Box mt={5}>

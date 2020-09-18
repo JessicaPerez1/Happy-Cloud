@@ -1,6 +1,8 @@
 import React from "react";
 import Signup from "../components/Signup";
+import HomeNav from "../components/HomeNav"
 import { makeStyles } from "@material-ui/core/styles";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +21,7 @@ const Register = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
+      <HomeNav />
       <Signup />
     </div>
   );
