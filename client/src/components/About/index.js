@@ -37,9 +37,6 @@ const welcomeButton = {
 function About() {
     return (
         <div>
-            <Link className="home" to="/" style={welcomeButton}>
-                Home Page
-          </Link>
             <MyCard>
                 <CardContent className="description" style={content}>
                     <Typography variant="h5" component="p">
