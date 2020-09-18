@@ -115,10 +115,6 @@ function Prompt() {
     <Container maxWidth="sm">
       <Card className={classes.root}>
         <CardContent>
-          {/* <Typography className={classes.title} gutterBottom>
-            Question of the Day
-          </Typography> */}
-
           <Tooltip title={longText}>
             <Button className={classes.title}>
               Question of the Day <sup> ? </sup>
