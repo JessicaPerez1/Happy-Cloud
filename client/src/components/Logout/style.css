@@ -1,9 +1,6 @@
 #button {
   background-color: transparent;
-  border: 1px solid  #0768a875;
+  border: 1px solid #0768a875;
   border-radius: 0.4rem;
-  float: right;
-  display: inline-flex;
-  color: #0768a875;	
-  
+  color: #0768a875;
 }

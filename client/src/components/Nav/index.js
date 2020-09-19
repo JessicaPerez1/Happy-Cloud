@@ -6,9 +6,10 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import Box from "@material-ui/core/Box";
 import Logout from "../Logout";
-import grey from "@material-ui/core/colors/grey";
 import "./style.css";
+import images from "../../images/happy-cloud-logo.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,10 +19,14 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
+    fontSize: "10px",
     flexGrow: 1,
   },
+  logo: {
+    width: 220,
+  },
   toolbar: {
-    height: 100,
+    minHeight: 50,
     paddingBottom: theme.spacing(1),
   },
 }));
@@ -48,23 +53,26 @@ function Nav() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.toolbar} id="navbar">
-          <Typography variant="h5" className={classes.title} id="cloud">
+          <img src={images} className={classes.logo} />
+          {/* <Typography className={classes.brand} id="happycloud">
             Happy Cloud
-          </Typography>
-          <Typography variant="h6" className={classes.title}>
-            <Button onClick={handleProfileClick} id="profile">
-              Profile
+          </Typography> */}
+          <Box display="flex" justifyContent="flex-end">
+            <Typography variant="h6" className={classes.title}>
+              <Button onClick={handleProfileClick} id="profile">
+                Profile
+              </Button>
+              <Button onClick={handleCloudClick} id="yourcloud">
+                Cloud
+              </Button>
+              <Button onClick={handleResourcesClick} id="resources">
+                Resources
+              </Button>
+            </Typography>
+            <Button color="inherit">
+              <Logout />
             </Button>
-            <Button onClick={handleCloudClick} id="cloud-button">
-              Cloud
-            </Button>
-            <Button onClick={handleResourcesClick} id="resources">
-              Resources
-            </Button>
-          </Typography>
-          <Button color="inherit">
-            <Logout />
-          </Button>
+          </Box>
         </Toolbar>
       </AppBar>
     </div>

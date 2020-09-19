@@ -6,13 +6,19 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import Box from "@material-ui/core/Box";
 import Logout from "../Logout";
 import "./style.css";
+import images from "../../images/happy-cloud-logo.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     // flexGrow: 1,
     alignContent: "flex-end",
+    marginBottom: 50,
+  },
+  logo: {
+    width: 220,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -45,7 +51,14 @@ function HomeNav() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.toolbar} id="navbar">
-          <Typography variant="h6" className={classes.title}>
+          <img src={images} className={classes.logo} />
+
+          <Box
+            variant="h6"
+            className={classes.title}
+            display="flex"
+            justifyContent="flex-end"
+          >
             <Button onClick={handleHomeClick} id="home">
               Home
             </Button>
@@ -55,7 +68,7 @@ function HomeNav() {
             <Button onClick={handleLoginClick} id="login">
               Login
             </Button>
-          </Typography>
+          </Box>
         </Toolbar>
       </AppBar>
     </div>
