@@ -29,21 +29,21 @@ const MyCard = styled(Card)({
 
 const fontStyle = {
   color: "#0767A8",
-  fontSize: "100px",
-  textShadow: "2px 4px 3px rgba(0,0,0,0.3)"
+  fontSize: "2.7rem",
+  textShadow: "2px 4px 3px rgba(0,0,0,0.3)",
 };
 
 const about = {
-  color: "#0767A8"
-}
+  color: "#0767A8",
+};
 
 function AppDescription() {
   return (
     <MyContainer>
       <div className="happycloud">
-        <Typography gutterBottom variant="h2" component="h3" style={fontStyle}>
+        {/* <Typography gutterBottom style={fontStyle}>
           Happy Cloud
-        </Typography>
+        </Typography> */}
       </div>
     </MyContainer>
   );
