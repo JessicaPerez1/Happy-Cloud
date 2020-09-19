@@ -7,6 +7,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Logout from "../Logout";
+import Box from "@material-ui/core/Box";
 import grey from "@material-ui/core/colors/grey";
 import "./style.css";
 
@@ -51,20 +52,22 @@ function Nav() {
           <Typography variant="h5" className={classes.title} id="cloud">
             Happy Cloud
           </Typography>
-          <Typography variant="h6" className={classes.title}>
-            <Button onClick={handleProfileClick} id="profile">
-              Profile
+          <Box display="flex" justifyContent="flex-end">
+            <Typography variant="h6" className={classes.title}>
+              <Button onClick={handleProfileClick} id="profile">
+                Profile
             </Button>
-            <Button onClick={handleCloudClick} id="cloud-button">
-              Cloud
+              <Button onClick={handleCloudClick} id="cloud-button">
+                Cloud
             </Button>
-            <Button onClick={handleResourcesClick} id="resources">
-              Resources
+              <Button onClick={handleResourcesClick} id="resources">
+                Resources
             </Button>
-          </Typography>
-          <Button color="inherit">
-            <Logout />
-          </Button>
+            </Typography>
+            <Button color="inherit">
+              <Logout />
+            </Button>
+          </Box>
         </Toolbar>
       </AppBar>
     </div>
