@@ -1,21 +1,21 @@
 #navbar {
-  background-image: url("https://64.media.tumblr.com/d54a9d32332efba6014646d1320e941f/tumblr_ovzced70jc1t5wz6ro1_1280.jpg");
-  background-size: cover;
-  background-repeat : no-repeat;
+  /* background-image: url("https://64.media.tumblr.com/d54a9d32332efba6014646d1320e941f/tumblr_ovzced70jc1t5wz6ro1_1280.jpg");
+  background-size: cover; */
+  background-color: white;
   width: "100%";
-
 }
 
 #profile,
-#cloud-button, #resources {
-  font-size: 15px;
-  color: #0767A8;
+#cloud-button,
+#resources {
+  font-size: 20px;
+  color: #0767a8;
   font-weight: bold;
-  float: right;
+  justify-content: right;
 }
 
 #cloud {
-  color:#0767A8;
+  color: #0767a8;
   font-size: 60px;
-  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }

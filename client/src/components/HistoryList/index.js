@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { usePostContext } from "../../utils/GlobalState";
 import { LOADING, UPDATE_POSTS } from "../../utils/actions";
 import API from "../../utils/API";
@@ -23,9 +23,6 @@ const MyContent = styled(CardContent)({
 
 function HistoryList() {
   const [state, dispatch] = usePostContext();
-  // //get all posts from a user /id
-  // // loop through the items in post array and display
-
   const getPosts = () => {
     const user = JSON.parse(localStorage.getItem("data"));
     console.log(JSON.parse(localStorage.getItem("data")))
@@ -46,7 +43,6 @@ function HistoryList() {
       })
       .catch((err) => console.log(err));
   };
-
   // useEffect(() => {
   //   getPosts();
   // }, []);

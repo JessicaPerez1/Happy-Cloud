@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppDescription from "../components/AppDescription";
 import DailyQuote from "../components/DailyQuote";
-import HomeNav from "../components/HomeNav"
+import HomeNav from "../components/HomeNav";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundImage:
-      "url(https://64.media.tumblr.com/d54a9d32332efba6014646d1320e941f/tumblr_ovzced70jc1t5wz6ro1_1280.jpg)",
+      "url(https://images.unsplash.com/photo-1515595967223-f9fa59af5a3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60)",
     backgroundSize: "cover",
     backgroundRepeat: "repeat",
     width: "100%",
@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 function Welcome() {
-  const [welcomeState, setWelcomeState] = useState();
   const classes = useStyles();
   return (
     <div className={classes.root}>

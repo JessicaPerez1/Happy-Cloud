@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   toolbar: {
-    minHeight: 110,
+    height: 100,
     paddingBottom: theme.spacing(1),
   },
 }));
@@ -51,7 +51,7 @@ function Nav() {
           <Typography variant="h5" className={classes.title} id="cloud">
             Happy Cloud
           </Typography>
-          <Typography variant="h8" className={classes.title}>
+          <Typography variant="h6" className={classes.title}>
             <Button onClick={handleProfileClick} id="profile">
               Profile
             </Button>
