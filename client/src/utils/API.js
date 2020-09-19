@@ -12,6 +12,7 @@ export default {
       },
     };
     console.log(id);
+    console.log(header);
     return axios.get("/api/user/" + id + "/posts", header);
   },
 

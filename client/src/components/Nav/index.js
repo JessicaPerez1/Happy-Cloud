@@ -54,15 +54,12 @@ function Nav() {
       <AppBar position="static">
         <Toolbar className={classes.toolbar} id="navbar">
           <img src={images} className={classes.logo} />
-          {/* <Typography className={classes.brand} id="happycloud">
-            Happy Cloud
-          </Typography> */}
           <Box display="flex" justifyContent="flex-end">
             <Typography variant="h6" className={classes.title}>
               <Button onClick={handleProfileClick} id="profile">
                 Profile
               </Button>
-              <Button onClick={handleCloudClick} id="yourcloud">
+              <Button onClick={handleCloudClick} id="cloud-button">
                 Cloud
               </Button>
               <Button onClick={handleResourcesClick} id="resources">
