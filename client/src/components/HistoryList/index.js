@@ -23,8 +23,8 @@ const MyContent = styled(CardContent)({
 
 function HistoryList() {
   const [state, dispatch] = usePostContext();
-  const getPosts = () => {
-    const user = JSON.parse(localStorage.getItem("data"));
+  const getPosts = async () => {
+    const user = await JSON.parse(localStorage.getItem("data"));
     console.log(JSON.parse(localStorage.getItem("data")))
     const userId = user.id;
     dispatch({ type: LOADING });
