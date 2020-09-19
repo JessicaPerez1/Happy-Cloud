@@ -13,8 +13,8 @@ function Profile() {
   };
 
   const linkStyle = {
-    color: "black"
-  }
+    color: "black",
+  };
 
   const buttonStyle = {
     clear: "both",
@@ -23,7 +23,8 @@ function Profile() {
     display: "block",
     margin: "0 auto",
     border: "2px solid transparent",
-    borderImage: "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
+    borderImage:
+      "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
     borderImageSlice: "1",
   };
 
@@ -31,11 +32,10 @@ function Profile() {
     <div>
       <Nav />
       <Prompt />
-      <Button
-        onClick={handleCloudPage}
-        style={buttonStyle}
-      >
-        <Link stlye={linkStyle}> Click Here for your WordCloud </Link>
+      <Button onClick={handleCloudPage} style={buttonStyle}>
+        <Link to="/cloud" stlye={linkStyle}>
+          Click Here for your WordCloud
+        </Link>
       </Button>
       <HistoryList />
     </div>
