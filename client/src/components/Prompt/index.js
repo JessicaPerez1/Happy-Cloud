@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { LOADING, UPDATE_POSTS } from "../../utils/actions";
 import { usePostContext } from "../../utils/GlobalState";
@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     padding: "1rem",
   },
   title: {
-    fontSize: 21,
+    fontSize: 12,
     color: "darkgray",
   },
   question: {
@@ -115,12 +115,6 @@ function Prompt() {
     <Container maxWidth="sm">
       <Card className={classes.root}>
         <CardContent>
-          <Tooltip title={longText}>
-            <Button className={classes.title}>
-              Question of the Day <sup> ? </sup>
-            </Button>
-          </Tooltip>
-
           <Typography
             className={classes.question}
             variant="body2"
@@ -128,6 +122,11 @@ function Prompt() {
           >
             What are you thankful for today?
           </Typography>
+          <Tooltip title={longText}>
+            <Button className={classes.title}>
+              Info <sup> ? </sup>
+            </Button>
+          </Tooltip>
         </CardContent>
         <form className={classes.form} noValidate autoComplete="off">
           <TextField
