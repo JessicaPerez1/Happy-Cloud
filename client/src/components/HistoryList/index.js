@@ -23,8 +23,8 @@ const MyContent = styled(CardContent)({
 
 function HistoryList() {
   const [state, dispatch] = usePostContext();
-  const getPosts = () => {
-    const user = JSON.parse(localStorage.getItem("data"));
+  const getPosts = async () => {
+    const user = await JSON.parse(localStorage.getItem("data"));
     console.log(user);
     const userId = user[0].id;
     console.log(userId);
@@ -45,7 +45,7 @@ function HistoryList() {
       .catch((err) => console.log(err));
   };
   // useEffect(() => {
-  //   getPosts();
+  // getPosts();
   // }, []);
 
   return (
