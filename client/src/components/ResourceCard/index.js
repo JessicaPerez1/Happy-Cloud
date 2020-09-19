@@ -6,7 +6,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
 function ResourceCard() {
-  return;
+  return (<div><p>This is where the resources go</p></div>)
 }
 
 export default ResourceCard;

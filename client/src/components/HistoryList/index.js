@@ -28,9 +28,8 @@ function HistoryList() {
 
   const getPosts = () => {
     const user = JSON.parse(localStorage.getItem("data"));
-    console.log(user);
-    const userId = user[0].id;
-    console.log(userId);
+    console.log(JSON.parse(localStorage.getItem("data")))
+    const userId = user.id;
     dispatch({ type: LOADING });
 
     API.getPosts(userId)
@@ -48,9 +47,9 @@ function HistoryList() {
       .catch((err) => console.log(err));
   };
 
-  useEffect(() => {
-    getPosts();
-  }, []);
+  // useEffect(() => {
+  //   getPosts();
+  // }, []);
 
   return (
     <div>

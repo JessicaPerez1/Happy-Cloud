@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Profile from "../pages/Profile";
 import Cloud from "../pages/Cloud";
-import Resources from "../pages/Resources"
+import Resources from "../pages/Resources";
 
 const AuthenticatedApp = () => {
   return (
@@ -11,7 +11,7 @@ const AuthenticatedApp = () => {
         <Switch>
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/cloud" component={Cloud} />
-          <Route exact pat="/resources" component={Resources} />
+          <Route exact path="/resources" component={Resources} />
         </Switch>
       </div>
     </Router>

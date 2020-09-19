@@ -1,7 +1,8 @@
 import React from "react";
+import HomeNav from "../components/HomeNav";
 import LoginForm from "../components/LoginForm";
 import { makeStyles } from "@material-ui/core/styles";
-import HomeNav from "../components/HomeNav";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Nav() {
+function HomeNav() {
     const classes = useStyles();
     const history = useHistory();
 
@@ -62,4 +62,4 @@ function Nav() {
     );
 }
 
-export default Nav;
+export default HomeNav;
