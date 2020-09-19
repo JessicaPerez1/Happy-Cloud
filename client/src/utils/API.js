@@ -4,6 +4,7 @@ export default {
   // Gets all posts
   getPosts: function (userId) {
     const id = userId;
+    console.log("API CONSOLE LOG", id);
     const header = {
       headers: {
         Authorization:
@@ -14,6 +15,7 @@ export default {
     console.log(header);
     return axios.get("/api/user/" + id + "/posts", header);
   },
+
   // Gets the post with the given id
   getSavedPosts: function (id) {
     return axios.get("/api/posts/" + id);

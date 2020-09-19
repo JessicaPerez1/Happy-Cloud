@@ -5,10 +5,15 @@
   width: "100%";
 }
 
+#happycloud {
+  color: #0767a8;
+  font-size: 30px;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+}
 #profile,
 #cloud-button,
 #resources {
-  font-size: 20px;
+  font-size: 15px;
   color: #0767a8;
   font-weight: bold;
   /* justify-content: right; */

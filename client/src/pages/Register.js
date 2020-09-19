@@ -1,19 +1,19 @@
 import React from "react";
 import Signup from "../components/Signup";
-import HomeNav from "../components/HomeNav"
+import HomeNav from "../components/HomeNav";
 import { makeStyles } from "@material-ui/core/styles";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundImage:
-      "url(https://64.media.tumblr.com/d54a9d32332efba6014646d1320e941f/tumblr_ovzced70jc1t5wz6ro1_1280.jpg)",
-    backgroundSize: "100%",
+      "url(https://images.unsplash.com/photo-1508843731797-991810e0b977?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)",
+    //"url(https://images.unsplash.com/photo-1521206698660-5e077ff6f9c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)",
+    backgroundSize: "110%",
     backgroundRepeat: "no-repeat",
     width: "100%",
     height: "100%",
     flexGrow: 1,
-    margin: 0
+    margin: 0,
   },
 }));
 
