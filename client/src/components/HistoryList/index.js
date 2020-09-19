@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { usePostContext } from "../../utils/GlobalState";
 import { LOADING, UPDATE_POSTS } from "../../utils/actions";
 import API from "../../utils/API";
@@ -23,13 +23,14 @@ const MyContent = styled(CardContent)({
 
 function HistoryList() {
   const [state, dispatch] = usePostContext();
+
   const getPosts = () => {
     const user = JSON.parse(localStorage.getItem("data"));
     console.log(user);
     const userId = user[0].id;
     console.log(userId);
-    dispatch({ type: LOADING });
 
+    dispatch({ type: LOADING });
     API.getPosts(userId)
       .then((results) => {
         console.log(results.data);
@@ -44,10 +45,10 @@ function HistoryList() {
       })
       .catch((err) => console.log(err));
   };
-  // useEffect(() => {
-  //   getPosts();
-  // }, []);
 
+  // useEffect(async () => {
+  //   await getPosts();
+  // }, []);
   return (
     <div>
       {state.posts.map((post) => (

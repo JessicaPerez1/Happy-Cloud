@@ -6,7 +6,7 @@ import HomeNav from "../components/HomeNav";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundImage:
-      "url(https://64.media.tumblr.com/d54a9d32332efba6014646d1320e941f/tumblr_ovzced70jc1t5wz6ro1_1280.jpg)",
+      "url(https://images.unsplash.com/photo-1485199926533-8c38475abf2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     width: "100%",
