@@ -13,17 +13,18 @@ import images from "../../images/happy-cloud-logo.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // flexGrow: 1,
-    alignContent: "flex-end",
-    marginBottom: 50,
+    flexGrow: 1,
+    // alignContent: "flex-end",
+    // marginBottom: 50,
+    width: "100%",
+    margin: 0,
   },
   logo: {
     width: 220,
-    background: "transparent",
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
+  // menuButton: {
+  //   marginRight: theme.spacing(2),
+  // },
   title: {
     flexGrow: 1,
   },

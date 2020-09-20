@@ -14,10 +14,11 @@ import images from "../../images/happy-cloud-logo.png";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    width: "100%",
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
+  // menuButton: {
+  // marginRight: theme.spacing(2),
+  // },
   title: {
     fontSize: "10px",
     flexGrow: 1,
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     minHeight: 50,
-    paddingBottom: theme.spacing(1),
+    // paddingBottom: theme.spacing(1),
   },
 }));
 

@@ -2,7 +2,7 @@
   /* background-image: url("https://64.media.tumblr.com/d54a9d32332efba6014646d1320e941f/tumblr_ovzced70jc1t5wz6ro1_1280.jpg");
   background-size: cover;
   background-repeat : no-repeat; */
-  width: "100%";
+  display: flex;
 }
 
 #home,
