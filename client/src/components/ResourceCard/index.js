@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 function ResourceCard() {
   const classes = useStyles();
   return (
+    
     <Container maxWidth="sm">
       <Card className={classes.root}>
         <CardActionArea>
@@ -65,6 +66,7 @@ function ResourceCard() {
         </CardActions>
       </Card>
     </Container>
+
   );
 }
 
