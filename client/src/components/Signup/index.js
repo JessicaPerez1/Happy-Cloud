@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: "#044572",
+    backgroundColor: "#6e6c6a",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -37,6 +37,11 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: "#f4f4f4",
+    color: "#6e6c6a",
+  },
+  reg: {
+    color: "#2883C2",
   },
 }));
 
@@ -112,7 +117,7 @@ const Signup = () => {
               <p>
                 Back to
                 <Button>
-                  <Link to="/login">
+                  <Link to="/login" className={classes.reg}>
                     login page
                   </Link>
                 </Button>

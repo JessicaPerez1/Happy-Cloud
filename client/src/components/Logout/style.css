@@ -1,6 +1,6 @@
 #button {
   background-color: transparent;
-  border: 1px solid #0768a875;
+  border: 1px solid rgb(172, 168, 168);
   border-radius: 0.4rem;
-  color: #0768a875;
+  color: rgb(143, 137, 137);
 }
