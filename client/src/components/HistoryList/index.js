@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { usePostContext } from "../../utils/GlobalState";
 import { LOADING, UPDATE_POSTS } from "../../utils/actions";
 import API from "../../utils/API";
@@ -28,8 +28,8 @@ function HistoryList() {
     console.log(user);
     const userId = user[0].id;
     console.log(userId);
-    dispatch({ type: LOADING });
 
+    dispatch({ type: LOADING });
     API.getPosts(userId)
       .then((results) => {
         console.log(results.data);
@@ -48,6 +48,9 @@ function HistoryList() {
   // getPosts();
   // }, []);
 
+  // useEffect(async () => {
+  //   await getPosts();
+  // }, []);
   return (
     <div>
       {state.posts.map((post) => (

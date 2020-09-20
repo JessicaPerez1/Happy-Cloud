@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     // minWidth: 275,
     maxWidth: "85%",
     margin: "0 auto",
+    marginTop: "2rem",
     padding: "1rem",
     minWidth: 300,
     flexGrow: 1,
@@ -58,7 +59,7 @@ export default function DailyPost() {
             <em>{quoteState.quotes.quote}</em>
           </Typography>
           <Typography variant="body2" component="p" color="textSecondary">
-            {quoteState.quotes.source}
+            - {quoteState.quotes.source}
             <br />
           </Typography>
         </CardContent>
