@@ -12,6 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import { TextField } from "@material-ui/core";
+import HelpIcon from '@material-ui/icons/Help';
 
 //STYLING
 const longText = `
@@ -124,7 +125,7 @@ function Prompt() {
           </Typography>
           <Tooltip title={longText}>
             <Button className={classes.title}>
-              Info <sup> ? </sup>
+              <HelpIcon />
             </Button>
           </Tooltip>
         </CardContent>

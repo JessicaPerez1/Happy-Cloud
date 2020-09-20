@@ -3,13 +3,14 @@
   background-size: cover;
   background-repeat : no-repeat; */
   width: "100%";
+  margin: 0
 }
 
 #home,
 #about,
 #login {
   font-size: 15px;
-  color: #0767a8;
+  color: rgb(143, 137, 137);
   font-weight: bold;
 }
 
