@@ -5,6 +5,7 @@ import Prompt from "../components/Prompt";
 import HistoryList from "../components/HistoryList";
 import { Link, useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import Calendar from "../components/Calendar";
 
 function Profile() {
   const history = useHistory();
@@ -38,7 +39,8 @@ function Profile() {
           Click Here for your WordCloud
         </Link>
       </Button>
-      <HistoryList />
+      {/* <HistoryList /> */}
+      <Calendar />
     </div>
   );
 }
