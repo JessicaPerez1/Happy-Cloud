@@ -23,6 +23,7 @@ const useStyles = makeStyles({
     minWidth: 300,
     margin: "1rem",
     padding: "1rem",
+    fontFamily: "'Nunito', sans-serif",
   },
   title: {
     fontSize: 12,
@@ -45,11 +46,13 @@ const useStyles = makeStyles({
   },
   button: {
     background: "transparent",
-    border: "0px solid #0768a875",
-    boxShadow: "2px 2px 2px 2px #0768a875",
+    border: "0px solid rgb(172, 168, 168)",
+    boxShadow: "2px 2px 2px 2px rgb(172, 168, 168)",
     borderRadius: "0.4rem",
     fontSize: "1rem",
     marginTop: "1rem",
+    fontFamily: "'Nunito', sans-serif",
+    color: "rgb(143, 137, 137)"
   },
 });
 

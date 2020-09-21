@@ -12,7 +12,7 @@ const MyCard = styled(Card)({
   marginBottom: "2rem",
   marginTop: "2rem",
   background: "transparent",
-  width: "50%",
+  width: "75%",
   display: "flex",
   alignItems: "center",
 
@@ -23,18 +23,40 @@ const content = {
   opacity: "95%",
 };
 
+const useStyles = makeStyles({
+
+  title: {
+    fontSize: "3rem",
+    fontFamily: "'Parisienne', cursive",
+    color: "#465e52",
+  },
+  paragraph: {
+    fontSize: "1.5rem",
+    fontFamily: "'Nunito', sans-serif",
+    color: "#463f3a",
+  }
+});
 
 function About() {
+  const classes = useStyles();
   return (
     <div>
       <MyCard >
         <CardContent className="description" style={content}>
-          <Typography variant="h5" component="p">
-            This positivity share-space is a way to keep track of at least one
-            thing you are grateful for every single day and gives you an
-            opportunity to reflect on the progress you've made when you hit
-            certain milestones. Generate your own <strong>WORD CLOUD</strong> to
-            spread and post positive energy on social media.
+          <Typography className={classes.title} gutterBottom>
+            Why Gratitude?
+          </Typography>
+          <br />
+          <Typography variant="h5" component="p" className={classes.paragraph}>
+            Studies show, actively considering what you are grateful for and writing it down leads to a more fullfilling and happy life. We created a space for you track your daily gratitude where you can easily reflect on past gratefulness.
+          </Typography>
+          <br />
+          <Typography variant="h5" component="p" className={classes.paragraph}>
+            Use this journal to spend time on yourself daily and donate as little as 30 seconds to self-reflect on a word or short phrase regarding what is bringing you gratitude that day. Once you have a week or a month of daily posts, you can generate your own <strong>WORD CLOUD</strong> to reflect on all the amazing elements you have in your life. Use the word cloud as a reminder or spread the positivity by sharing your amazing energy on social media.
+          </Typography>
+          <br />
+          <Typography variant="h5" component="p" className={classes.paragraph}>
+            Happy journaling!
           </Typography>
         </CardContent>
       </MyCard>

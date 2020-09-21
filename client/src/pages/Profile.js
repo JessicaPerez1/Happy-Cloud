@@ -26,6 +26,7 @@ function Profile() {
     borderImage:
       "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
     borderImageSlice: "1",
+    fontFamily: "'Nunito', sans-serif",
   };
 
   return (
