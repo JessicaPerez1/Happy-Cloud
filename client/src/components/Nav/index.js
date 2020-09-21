@@ -18,10 +18,11 @@ import "./style.css";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    width: "100%",
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
+  // menuButton: {
+  // marginRight: theme.spacing(2),
+  // },
   title: {
     flexGrow: 1,
   },
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     minHeight: 50,
-    paddingBottom: theme.spacing(1),
+    // paddingBottom: theme.spacing(1),
   },
   menuIcon: {
     backgroundColor: "lightGrey"

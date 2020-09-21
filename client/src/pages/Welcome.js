@@ -4,7 +4,6 @@ import AppDescription from "../components/AppDescription";
 import DailyQuote from "../components/DailyQuote";
 import HomeNav from "../components/HomeNav";
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundImage:
@@ -14,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "auto",
     // flexGrow: 1,
-    margin: 0
+    margin: 0,
   },
   div: {
     height: "600px",

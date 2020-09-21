@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 import { useHistory } from "react-router-dom";
 import images from "../../images/happy-cloud-logo.png";
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import Button from '@material-ui/core/Button';
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import Menu from "@material-ui/core/Menu";
+import Button from "@material-ui/core/Button";
 import "./style.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -30,8 +30,8 @@ const useStyles = makeStyles((theme) => ({
     // paddingBottom: theme.spacing(1),
   },
   menuIcon: {
-    backgroundColor: "lightGrey"
-  }
+    backgroundColor: "lightGrey",
+  },
 }));
 
 function HomeNav() {
@@ -82,13 +82,13 @@ function HomeNav() {
               id="menu-appbar"
               anchorEl={anchorEl}
               anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               open={open}
               onClose={handleClose}
@@ -96,17 +96,17 @@ function HomeNav() {
               <MenuItem onClick={handleClose}>
                 <Button onClick={handleHomeClick} id="home">
                   Home
-                                </Button>
+                </Button>
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Button onClick={handleAboutClick} id="about">
                   About
-                                </Button>
+                </Button>
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Button onClick={handleLoginClick} id="login">
                   Login
-                                </Button>
+                </Button>
               </MenuItem>
             </Menu>
           </div>

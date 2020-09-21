@@ -5,6 +5,21 @@ import API from "../../utils/API";
 import { Button } from "@material-ui/core";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import { makeStyles } from "@material-ui/core/styles";
+import "./calendar.css";
+//STYLING
+const useStyles = makeStyles({
+  button: {
+    border: "0px solid rgb(172, 168, 168)",
+    boxShadow: "1px 1px 2px 2px rgb(172, 168, 168)",
+    borderRadius: "0.2rem",
+    fontSize: "1rem",
+    marginTop: "1rem",
+    fontFamily: "'Nunito', sans-serif",
+    color: "rgb(143, 137, 137)",
+    marginBottom: 10,
+  },
+});
 
 // import "@fullcalendar/core/main.css";
 // import "@fullcalendar/daygrid/main.css";
@@ -13,6 +28,7 @@ const postsArray = [];
 const postsDate = [];
 const allInfo = [];
 export default function Calendar() {
+  const classes = useStyles();
   const [state, dispatch] = usePostContext();
 
   const receivePosts = async () => {
@@ -107,10 +123,13 @@ export default function Calendar() {
 
   // const events = [{ title: "today's event" , date: new Date() }];
   return (
-    <div className="App">
-      <Button onClick={setCalendar}> Add Post/View Calendar </Button>
+    <div className="calendar">
+      <Button className={classes.button} onClick={setCalendar}>
+        Add Post/View Calendar
+      </Button>
       {/* {state.posts.map((post) => ( */}
       <FullCalendar
+        className="cal"
         defaultView="dayGridMonth"
         plugins={[dayGridPlugin]}
         events={events}

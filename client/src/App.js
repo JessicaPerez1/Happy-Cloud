@@ -9,9 +9,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        {state.user.token ? <AuthenticatedApp /> : <UnauthenticatedApp />}
-      </div>
+      {state.user.token ? <AuthenticatedApp /> : <UnauthenticatedApp />}
     </Router>
   );
 }

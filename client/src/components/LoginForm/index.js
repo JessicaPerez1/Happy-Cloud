@@ -72,9 +72,8 @@ export default function SignIn() {
       user: data,
     });
     setLocalStorage(data);
-    console.log(setLocalStorage(data))
+    console.log(setLocalStorage(data));
   };
-
 
   const handleLogin = (event) => {
     event.preventDefault();
