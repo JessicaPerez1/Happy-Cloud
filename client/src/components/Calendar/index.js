@@ -5,6 +5,7 @@ import API from "../../utils/API";
 import { Button } from "@material-ui/core";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import "./calendar.css";
 
 // import "@fullcalendar/core/main.css";
 // import "@fullcalendar/daygrid/main.css";
@@ -107,10 +108,11 @@ export default function Calendar() {
 
   // const events = [{ title: "today's event" , date: new Date() }];
   return (
-    <div className="App">
+    <div className="calendar">
       <Button onClick={setCalendar}> Add Post/View Calendar </Button>
       {/* {state.posts.map((post) => ( */}
       <FullCalendar
+        className="cal"
         defaultView="dayGridMonth"
         plugins={[dayGridPlugin]}
         events={events}
