@@ -6,7 +6,6 @@ import Calendar from "../components/Calendar";
 // import HistoryList from "../components/HistoryList";
 import { Link, useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
-import Calendar from "../components/Calendar";
 
 function Profile() {
   const history = useHistory();

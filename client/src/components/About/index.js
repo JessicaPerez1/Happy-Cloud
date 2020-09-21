@@ -15,7 +15,6 @@ const MyCard = styled(Card)({
   width: "75%",
   display: "flex",
   alignItems: "center",
-
 });
 
 const content = {
@@ -24,7 +23,6 @@ const content = {
 };
 
 const useStyles = makeStyles({
-
   title: {
     fontSize: "3rem",
     fontFamily: "'Parisienne', cursive",
@@ -34,25 +32,34 @@ const useStyles = makeStyles({
     fontSize: "1.5rem",
     fontFamily: "'Nunito', sans-serif",
     color: "#463f3a",
-  }
+  },
 });
 
 function About() {
   const classes = useStyles();
   return (
     <div>
-      <MyCard >
+      <MyCard>
         <CardContent className="description" style={content}>
           <Typography className={classes.title} gutterBottom>
             Why Gratitude?
           </Typography>
           <br />
           <Typography variant="h5" component="p" className={classes.paragraph}>
-            Studies show, actively considering what you are grateful for and writing it down leads to a more fullfilling and happy life. We created a space for you track your daily gratitude where you can easily reflect on past gratefulness.
+            Studies show, actively considering what you are grateful for and
+            writing it down leads to a more fullfilling and happy life. We
+            created a space for you to track your daily gratitude where you can
+            easily reflect on past gratefulness.
           </Typography>
           <br />
           <Typography variant="h5" component="p" className={classes.paragraph}>
-            Use this journal to spend time on yourself daily and donate as little as 30 seconds to self-reflect on a word or short phrase regarding what is bringing you gratitude that day. Once you have a week or a month of daily posts, you can generate your own <strong>WORD CLOUD</strong> to reflect on all the amazing elements you have in your life. Use the word cloud as a reminder or spread the positivity by sharing your amazing energy on social media.
+            Use this journal to spend time on yourself daily and donate as
+            little as 30 seconds to self-reflect on a word or short phrase
+            regarding what is bringing you gratitude that day. Once you have a
+            week or a month of daily posts, you can generate your own{" "}
+            <strong>WORD CLOUD</strong> to reflect on all the amazing elements
+            you have in your life. Use the word cloud as a reminder or spread
+            the positivity by sharing your amazing energy on social media.
           </Typography>
           <br />
           <Typography variant="h5" component="p" className={classes.paragraph}>
