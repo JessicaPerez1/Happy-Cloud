@@ -28,10 +28,12 @@ const useStyles = makeStyles({
   title: {
     fontSize: "3rem",
     fontFamily: "'Parisienne', cursive",
+    color: "#465e52",
   },
   paragraph: {
     fontSize: "1.5rem",
     fontFamily: "'Nunito', sans-serif",
+    color: "#463f3a",
   }
 });
 
@@ -41,7 +43,7 @@ function About() {
     <div>
       <MyCard >
         <CardContent className="description" style={content}>
-          <Typography className={classes.title} color="textSecondary" gutterBottom>
+          <Typography className={classes.title} gutterBottom>
             Why Gratitude?
           </Typography>
           <br />
