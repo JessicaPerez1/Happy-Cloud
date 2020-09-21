@@ -1,25 +1,20 @@
-import React from "react";
-import { useGlobalContext } from "../../utils/GlobalContext";
+import React from 'react';
 import { useHistory } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import Box from "@material-ui/core/Box";
-import Logout from "../Logout";
-import "./style.css";
 import images from "../../images/happy-cloud-logo.png";
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import Button from '@material-ui/core/Button';
+import "./style.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // flexGrow: 1,
-    alignContent: "flex-end",
-    marginBottom: 50,
-  },
-  logo: {
-    width: 220,
-    background: "transparent",
+    flexGrow: 1,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -27,15 +22,32 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  logo: {
+    width: 220,
+  },
   toolbar: {
     minHeight: 50,
     // paddingBottom: theme.spacing(1),
   },
+  menuIcon: {
+    backgroundColor: "lightGrey"
+  }
 }));
 
 function HomeNav() {
   const classes = useStyles();
   const history = useHistory();
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const handleHomeClick = () => {
     history.push("/");
@@ -52,27 +64,55 @@ function HomeNav() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.toolbar} id="navbar">
-          <img src={images} className={classes.logo} />
-          <Box
-            variant="h6"
-            className={classes.title}
-            display="flex"
-            justifyContent="flex-end"
-          >
-            <Button onClick={handleHomeClick} id="home">
-              Home
-            </Button>
-            <Button onClick={handleAboutClick} id="about">
-              About
-            </Button>
-            <Button onClick={handleLoginClick} id="login">
-              Login
-            </Button>
-          </Box>
+          <Typography variant="h6" className={classes.title}>
+            <img src={images} className={classes.logo} />
+          </Typography>
+
+          <div>
+            <IconButton
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+            >
+              <MenuIcon className={classes.menuIcon} />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={open}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>
+                <Button onClick={handleHomeClick} id="home">
+                  Home
+                                </Button>
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Button onClick={handleAboutClick} id="about">
+                  About
+                                </Button>
+              </MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Button onClick={handleLoginClick} id="login">
+                  Login
+                                </Button>
+              </MenuItem>
+            </Menu>
+          </div>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
-
 export default HomeNav;

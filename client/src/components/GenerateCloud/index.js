@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    fontFamily: "'Nunito', sans-serif",
   },
   generatedCloud: {
     margin: "auto",

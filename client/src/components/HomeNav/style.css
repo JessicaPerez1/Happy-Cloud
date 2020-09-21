@@ -3,18 +3,15 @@
   background-size: cover;
   background-repeat : no-repeat; */
   width: "100%";
+  margin: 0
 }
 
 #home,
 #about,
 #login {
   font-size: 15px;
-  color: #0767a8;
+  color: rgb(143, 137, 137);
   font-weight: bold;
+  font-family: 'Nunito', sans-serif,
 }
 
-#cloud {
-  color: #0767a8;
-  font-size: 60px;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-}
