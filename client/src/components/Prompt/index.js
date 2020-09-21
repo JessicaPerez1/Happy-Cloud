@@ -23,6 +23,7 @@ const useStyles = makeStyles({
     minWidth: 300,
     margin: "1rem",
     padding: "1rem",
+    fontFamily: "'Nunito', sans-serif",
   },
   title: {
     fontSize: 12,
@@ -50,6 +51,7 @@ const useStyles = makeStyles({
     borderRadius: "0.4rem",
     fontSize: "1rem",
     marginTop: "1rem",
+    fontFamily: "'Nunito', sans-serif",
   },
 });
 
