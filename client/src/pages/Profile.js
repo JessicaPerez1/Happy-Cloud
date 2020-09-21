@@ -38,7 +38,7 @@ function Profile() {
           Click Here for your WordCloud
         </Link>
       </Button>
-      <HistoryList />
+      {/* <HistoryList /> */}
       <Calendar />
     </div>
   );
