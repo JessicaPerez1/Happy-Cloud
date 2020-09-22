@@ -6,8 +6,8 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundImage:
-          "url(https://images.unsplash.com/photo-1515595967223-f9fa59af5a3b?ixlib)",
-        backgroundSize: "auto",
+          "url(https://i.ibb.co/y6ZfVyc/tree.png)",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         width: "auto",
         height: "auto",

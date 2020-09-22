@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     // color: "#465e52",
     color: "#463f3a",
     textAlign: "left",
-    fontSize: "3rem",
+    fontSize: "calc(25px + 1.2vw)",
     fontFamily: "'Parisienne', cursive",
   },
   name: {

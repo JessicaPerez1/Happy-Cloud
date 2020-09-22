@@ -29,7 +29,7 @@ const useStyles = makeStyles({
     color: "#465e52",
   },
   paragraph: {
-    fontSize: "1.5rem",
+    fontSize: "calc(11px + 1vw)",
     fontFamily: "'Libre Baskervville', serif",
     color: "#463f3a",
   },

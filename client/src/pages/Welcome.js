@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     width: "auto",
-    height: "auto",
+    height: "100%",
     flexGrow: 1,
     margin: "0",
   },
