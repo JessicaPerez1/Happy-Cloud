@@ -29,8 +29,8 @@ const useStyles = makeStyles({
     color: "#465e52",
   },
   paragraph: {
-    fontSize: "1.5rem",
-    fontFamily: "'Nunito', sans-serif",
+    fontSize: "calc(11px + 1vw)",
+    fontFamily: "'Libre Baskervville', serif",
     color: "#463f3a",
   },
 });

@@ -15,15 +15,18 @@ const useStyles = makeStyles((theme) => ({
     padding: "1rem",
     minWidth: 300,
     flexGrow: 1,
+    fontFamily: "'Baskervville', serif",
   },
   title: {
     fontSize: 21,
     color: "darkGray",
+    fontFamily: "'Baskervville', serif",
   },
   subtitle: {
     fontSize: 28,
     fontWeight: "bold",
     color: "#3B3C3C",
+    fontFamily: "'Baskervville', serif",
   },
   media: {
     height: 400,
@@ -33,7 +36,9 @@ const useStyles = makeStyles((theme) => ({
 function ResourceCard() {
   const classes = useStyles();
   return (
+    
     <Container maxWidth="sm">
+  
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
@@ -68,7 +73,7 @@ function ResourceCard() {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJqpghK-QPpQWfoZOMansV6Ld6SppB80yF1g&usqp=CAU"
+            image="https://images.unsplash.com/photo-1528938102132-4a9276b8e320?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
             title="Today I Am Grateful"
           />
           <CardContent>
@@ -153,7 +158,9 @@ function ResourceCard() {
           </Button>
         </CardActions>
       </Card>
+
     </Container>
+
   );
 }
 
