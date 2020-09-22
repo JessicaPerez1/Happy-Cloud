@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   generatedCloud: {
     margin: "auto",
+    padding: "0",
     display: "block",
     height: "600px",
     width: "600px",
@@ -27,7 +28,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "5px",
   },
   pdfBtn: {
-    float: "right"
+    display: "flex",
+    flexDirection: "column",
+    // justifyContent: "center",
+    alignItems: "center",
+    margin: "auto",
+    padding: "10 px"
   }
 }));
 
@@ -84,13 +90,17 @@ function generateCloud() {
       <div ref={ref}>
         <div className={classes.generatedCloud}>{ReactHtmlParser(svgFile)}</div>
       </div>
-      <Pdf targetRef={ref} filename="your-word-cloud.pdf">
-        {({ toPdf }) => (
-          <button onClick={toPdf} rel="noopener noreferrer" target="_blank" className={classes.pdfBtn}>
-            Generate Pdf
-          </button>
-        )}
-      </Pdf>
+
+      <Box className={classes.pdfBtn}>
+        <Pdf targetRef={ref} filename="your-word-cloud.pdf">
+          {({ toPdf }) => (
+            <button onClick={toPdf} rel="noopener noreferrer" target="_blank" >
+              Download Image to pdf
+            </button>
+          )}
+        </Pdf>
+      </Box>
+      
     </div>
   );
 }

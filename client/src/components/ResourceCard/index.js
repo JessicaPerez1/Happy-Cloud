@@ -38,6 +38,7 @@ function ResourceCard() {
   return (
     
     <Container maxWidth="sm">
+  
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
@@ -72,7 +73,7 @@ function ResourceCard() {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJqpghK-QPpQWfoZOMansV6Ld6SppB80yF1g&usqp=CAU"
+            image="https://images.unsplash.com/photo-1528938102132-4a9276b8e320?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
             title="Today I Am Grateful"
           />
           <CardContent>
@@ -157,6 +158,7 @@ function ResourceCard() {
           </Button>
         </CardActions>
       </Card>
+
     </Container>
 
   );

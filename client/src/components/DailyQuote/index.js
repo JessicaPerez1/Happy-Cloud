@@ -8,7 +8,6 @@ import quotes from "../../quotes.json";
 
 const useStyles = makeStyles({
   root: {
-    // minWidth: 275,
     maxWidth: "85%",
     background: "transparent",
     margin: "0 auto",
@@ -21,7 +20,6 @@ const useStyles = makeStyles({
     fontSize: 21,
   },
   body: {
-    // color: "#465e52",
     color: "#463f3a",
     textAlign: "left",
     fontSize: "calc(25px + 1.2vw)",
