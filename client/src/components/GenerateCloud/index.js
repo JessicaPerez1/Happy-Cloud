@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    fontFamily: "'Nunito', sans-serif",
+    fontFamily: "'Baskervville', serif",
   },
   generatedCloud: {
     margin: "auto",
@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     border: "2px solid grey",
     borderRadius: "5px",
   },
+  pdfBtn: {
+    float: "right"
+  }
 }));
 
 function generateCloud() {
@@ -83,7 +86,7 @@ function generateCloud() {
       </div>
       <Pdf targetRef={ref} filename="your-word-cloud.pdf">
         {({ toPdf }) => (
-          <button onClick={toPdf} rel="noopener noreferrer" target="_blank">
+          <button onClick={toPdf} rel="noopener noreferrer" target="_blank" className={classes.pdfBtn}>
             Generate Pdf
           </button>
         )}
