@@ -41,10 +41,17 @@ const useStyles = makeStyles((theme) => ({
     color: "rgb(172, 168, 168)"
   },
   newFile: {
-    width: 400,
-    height: 400,
-    backgroundColor: "blue"
-  }
+    width: 600,
+    height: 600,
+  },
+  instabutton: {
+    marginTop: 5,
+    marginBottom: 10,
+    backgroundColor: "transparent",
+    border: "none",
+    color: "rgb(143, 137, 137)",
+    fontFamily: "Libre Baskervvile , serif",
+  },
 }));
 
 // const options = {
@@ -72,12 +79,12 @@ function generateCloud() {
       true
     );
     xhttp.send();
-    console.log("https://quickchart.io/wordcloud?text=" + posts);
+
   }
 
   function handleCloudGenerator() {
     const user = JSON.parse(localStorage.getItem("data"));
-    console.log(user[0].id);
+
     const userId = user[0].id;
     let generatedWords = [];
     API.getPosts(userId)
@@ -90,6 +97,7 @@ function generateCloud() {
       })
       .catch((err) => console.log(err));
   }
+
   return (
     <div>
       <Box className={classes.buttonBox}>
@@ -102,18 +110,29 @@ function generateCloud() {
           <br />
           Cloud
         </Button>
+        <Button className={classes.instabutton}>
+          <a
+            href="https://www.instagram.com/accounts/login/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Share on Instagram!
+          </a>
+        </Button>
       </Box>
-      <div ref={ref} className={classes.generatedCloud}>{ReactHtmlParser(svgFile)}</div>
+      <div ref={ref} className={classes.generatedCloud}>
+        {ReactHtmlParser(svgFile)}
+      </div>
+
       <Box className={classes.pdfBtn}>
-        <Pdf targetRef={ref} filename="your-word-cloud.pdf" >
+        <Pdf targetRef={ref} className={classes.newFile} filename="your-word-cloud.pdf" >
           {({ toPdf }) => (
-            <Button onClick={toPdf} className={classes.pdfBtnLook} rel="noopener noreferrer" target="_blank" >
+            <Button onClick={toPdf} className={classes.pdfBtnLook} rel="noopener noreferrer" target="_blank">
               <CloudDownloadIcon />
             </Button>
           )}
         </Pdf>
       </Box>
-
     </div>
   );
 }
