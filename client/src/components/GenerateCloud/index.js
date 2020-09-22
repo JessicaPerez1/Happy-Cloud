@@ -35,6 +35,14 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     padding: "10 px",
   },
+  instabutton: {
+    marginTop: 5,
+    marginBottom: 10,
+    backgroundColor: "transparent",
+    border: "none",
+    color: "rgb(143, 137, 137)",
+    fontFamily: "Libre Baskervvile , serif",
+  },
 }));
 
 function generateCloud() {
@@ -74,6 +82,7 @@ function generateCloud() {
       })
       .catch((err) => console.log(err));
   }
+
   return (
     <div>
       <Box className={classes.buttonBox}>
@@ -85,6 +94,15 @@ function generateCloud() {
           Generate
           <br />
           Cloud
+        </Button>
+        <Button className={classes.instabutton}>
+          <a
+            href="https://www.instagram.com/accounts/login/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Share on Instagram!
+          </a>
         </Button>
       </Box>
       <div ref={ref} className={classes.generatedCloud}>
