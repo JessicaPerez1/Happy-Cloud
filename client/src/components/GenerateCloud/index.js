@@ -78,10 +78,14 @@ function generateCloud() {
           Cloud
         </Button>
       </Box>
-      <div ref={ref}>
-        <div className={classes.generatedCloud}>{ReactHtmlParser(svgFile)}</div>
+      <div ref={ref} className={classes.generatedCloud}>
+        {ReactHtmlParser(svgFile)}
       </div>
-      <Pdf targetRef={ref} filename="your-word-cloud.pdf">
+      <Pdf
+        targetRef={ref}
+        style={{ width: 400, height: 400 }}
+        filename="your-word-cloud.pdf"
+      >
         {({ toPdf }) => (
           <button onClick={toPdf} rel="noopener noreferrer" target="_blank">
             Generate Pdf

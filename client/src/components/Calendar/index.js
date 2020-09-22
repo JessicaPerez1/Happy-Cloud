@@ -6,6 +6,7 @@ import { Button } from "@material-ui/core";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import { makeStyles } from "@material-ui/core/styles";
+// import interactionPlugin from "@fullcalendar/interaction";
 import "./calendar.css";
 //STYLING
 const useStyles = makeStyles({
@@ -125,7 +126,7 @@ export default function Calendar() {
   return (
     <div className="calendar">
       <Button className={classes.button} onClick={setCalendar}>
-        Add Post/View Calendar
+        Populate/View Calendar
       </Button>
       {/* {state.posts.map((post) => ( */}
       <FullCalendar
