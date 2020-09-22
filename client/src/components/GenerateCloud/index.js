@@ -5,6 +5,7 @@ import { Button } from "@material-ui/core";
 import API from "../../utils/API";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
+import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
 import "./style.css";
 import Pdf from "react-to-pdf";
 const ref = React.createRef();
@@ -30,10 +31,18 @@ const useStyles = makeStyles((theme) => ({
   pdfBtn: {
     display: "flex",
     flexDirection: "column",
-    // justifyContent: "center",
     alignItems: "center",
-    margin: "auto",
-    padding: "10 px",
+    marginTop: "10px",
+    padding: "10px",
+  },
+  pdfBtnLook: {
+    border: "none",
+    background: "transparent",
+    color: "rgb(172, 168, 168)"
+  },
+  newFile: {
+    width: 600,
+    height: 600,
   },
   instabutton: {
     marginTop: 5,
@@ -44,6 +53,12 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Libre Baskervvile , serif",
   },
 }));
+
+// const options = {
+//   orientation: 'landscape',
+//   unit: 'in',
+//   format: [4, 2]
+// };
 
 function generateCloud() {
   const classes = useStyles();
@@ -64,12 +79,12 @@ function generateCloud() {
       true
     );
     xhttp.send();
-    console.log("https://quickchart.io/wordcloud?text=" + posts);
+
   }
 
   function handleCloudGenerator() {
     const user = JSON.parse(localStorage.getItem("data"));
-    console.log(user[0].id);
+
     const userId = user[0].id;
     let generatedWords = [];
     API.getPosts(userId)
@@ -110,11 +125,11 @@ function generateCloud() {
       </div>
 
       <Box className={classes.pdfBtn}>
-        <Pdf targetRef={ref} filename="your-word-cloud.pdf">
+        <Pdf targetRef={ref} className={classes.newFile} filename="your-word-cloud.pdf" >
           {({ toPdf }) => (
-            <button onClick={toPdf} rel="noopener noreferrer" target="_blank">
-              Download Image to pdf
-            </button>
+            <Button onClick={toPdf} className={classes.pdfBtnLook} rel="noopener noreferrer" target="_blank">
+              <CloudDownloadIcon />
+            </Button>
           )}
         </Pdf>
       </Box>

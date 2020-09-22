@@ -54,7 +54,6 @@ export default function SignIn() {
   const history = useHistory();
 
   const setLocalStorage = (user) => {
-    console.log("setLocalStorage", user);
     const storageInfo = [];
     let userInfo = { email: user.email, token: user.token, id: user._id };
     storageInfo.push(userInfo);
@@ -66,19 +65,16 @@ export default function SignIn() {
       email: emailRef.current.value,
       password: passwordRef.current.value,
     });
-    console.log(data);
     dispatch({
       type: LOGIN,
       user: data,
     });
     setLocalStorage(data);
-    console.log(setLocalStorage(data));
   };
 
   const handleLogin = (event) => {
     event.preventDefault();
     doLogin();
-    console.log("you’ve logged in");
     history.push("/profile");
   };
   return (

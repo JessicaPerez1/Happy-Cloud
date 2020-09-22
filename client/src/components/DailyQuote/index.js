@@ -35,10 +35,8 @@ export default function DailyPost() {
   const [quoteState, setQuoteState] = useState({
     quotes: quotes,
   });
-  console.log("Current state", quoteState);
   const getQuotes = () => {
     let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    console.log(randomQuote);
     setQuoteState({
       quotes: randomQuote,
     });
