@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: "#044572",
+    backgroundColor: "#6e6c6a",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -38,6 +38,8 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: "#f4f4f4",
+    color: "#6e6c6a",
   },
   reg: {
     color: "#2883C2",
@@ -70,9 +72,8 @@ export default function SignIn() {
       user: data,
     });
     setLocalStorage(data);
-    console.log(setLocalStorage(data))
+    console.log(setLocalStorage(data));
   };
-
 
   const handleLogin = (event) => {
     event.preventDefault();

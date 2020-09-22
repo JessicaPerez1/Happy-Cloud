@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     height: "auto",
     // flexGrow: 1,
+    margin: 0,
   },
   div: {
     height: "600px",

@@ -6,6 +6,8 @@ import API from "../../utils/API";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import "./style.css";
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 
 const useStyles = makeStyles((theme) => ({
   buttonBox: {
@@ -14,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    fontFamily: "'Nunito', sans-serif",
   },
   generatedCloud: {
     margin: "auto",
@@ -75,7 +78,16 @@ function generateCloud() {
           Cloud
         </Button>
       </Box>
-      <div className={classes.generatedCloud}>{ReactHtmlParser(svgFile)}</div>
+      <div ref={ref}>
+        <div className={classes.generatedCloud}>{ReactHtmlParser(svgFile)}</div>
+      </div>
+      <Pdf targetRef={ref} filename="your-word-cloud.pdf">
+        {({ toPdf }) => (
+          <button onClick={toPdf} rel="noopener noreferrer" target="_blank">
+            Generate Pdf
+          </button>
+        )}
+      </Pdf>
     </div>
   );
 }

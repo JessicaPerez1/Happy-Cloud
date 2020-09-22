@@ -2,7 +2,8 @@
 import React from "react";
 import Nav from "../components/Nav";
 import Prompt from "../components/Prompt";
-import HistoryList from "../components/HistoryList";
+import Calendar from "../components/Calendar";
+// import HistoryList from "../components/HistoryList";
 import { Link, useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
@@ -26,6 +27,7 @@ function Profile() {
     borderImage:
       "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)",
     borderImageSlice: "1",
+    fontFamily: "'Nunito', sans-serif",
   };
 
   return (
@@ -37,7 +39,8 @@ function Profile() {
           Click Here for your WordCloud
         </Link>
       </Button>
-      <HistoryList />
+      {/* <HistoryList /> */}
+      <Calendar />
     </div>
   );
 }

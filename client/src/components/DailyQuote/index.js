@@ -10,7 +10,9 @@ const useStyles = makeStyles({
   root: {
     // minWidth: 275,
     maxWidth: "85%",
+    background: "transparent",
     margin: "0 auto",
+    marginTop: "2rem",
     padding: "1rem",
     minWidth: 300,
     flexGrow: 1,
@@ -19,10 +21,15 @@ const useStyles = makeStyles({
     fontSize: 21,
   },
   body: {
-    color: "#044572",
+    // color: "#465e52",
+    color: "#463f3a",
     textAlign: "left",
-    fontSize: "2rem",
+    fontSize: "3rem",
+    fontFamily: "'Parisienne', cursive",
   },
+  name: {
+    fontFamily: "'Nunito', sans-serif",
+  }
 });
 
 export default function DailyPost() {
@@ -47,18 +54,11 @@ export default function DailyPost() {
     <Container maxWidth="sm">
       <Card className={classes.root}>
         <CardContent>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          >
-            Grateful Post of the Day:
-          </Typography>
           <Typography className={classes.body} component="h2">
             <em>{quoteState.quotes.quote}</em>
           </Typography>
-          <Typography variant="body2" component="p" color="textSecondary">
-            {quoteState.quotes.source}
+          <Typography className={classes.name} variant="body2" component="p" color="textSecondary">
+            - {quoteState.quotes.source}
             <br />
           </Typography>
         </CardContent>
