@@ -6,6 +6,7 @@ import { Button } from "@material-ui/core";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import { makeStyles } from "@material-ui/core/styles";
+// import interactionPlugin from "@fullcalendar/interaction";
 import "./calendar.css";
 //STYLING
 const useStyles = makeStyles({

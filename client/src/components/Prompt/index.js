@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import { TextField } from "@material-ui/core";
-import HelpIcon from '@material-ui/icons/Help';
+import InfoIcon from "@material-ui/icons/Info";
 
 //STYLING
 const longText = `
@@ -26,17 +26,21 @@ const useStyles = makeStyles({
     fontFamily: "'Baskervville', serif",
   },
   title: {
-    fontSize: 12,
+    margin: 0,
+    fontSize: 9,
     color: "darkgray",
+    float: "right",
   },
   question: {
     fontSize: "calc(18px + 1vw)",
     fontWeight: "bold",
     color: "#3B3C3C",
     fontFamily: "'Baskervville', serif",
+    textAlign: "center",
   },
   textfield: {
-    width: "50%",
+    margin: "0 auto",
+    width: "75%",
     color: "#017778",
     border: "0.3px solid lightgrey",
   },
@@ -53,7 +57,7 @@ const useStyles = makeStyles({
     fontSize: "1rem",
     marginTop: "1rem",
     fontFamily: "'Baskervville', serif",
-    color: "rgb(143, 137, 137)"
+    color: "rgb(143, 137, 137)",
   },
 });
 
@@ -127,23 +131,25 @@ function Prompt() {
           >
             What are you thankful for today?
           </Typography>
-          <Tooltip title={longText}>
-            <Button className={classes.title}>
-              <HelpIcon />
-            </Button>
-          </Tooltip>
         </CardContent>
         <form className={classes.form} noValidate autoComplete="off">
-          <TextField
-            className={classes.textfield}
-            id="outlined-basic"
-            label="Your WORD here"
-            type="text"
-            variant="outlined"
-            name="post"
-            onChange={handleInputChange}
-            inputRef={postRef}
-          />
+          <div>
+            <TextField
+              className={classes.textfield}
+              id="outlined-basic"
+              label="Your WORD here"
+              type="text"
+              variant="outlined"
+              name="post"
+              onChange={handleInputChange}
+              inputRef={postRef}
+            />
+            <Tooltip title={longText}>
+              <Button className={classes.title}>
+                <InfoIcon />
+              </Button>
+            </Tooltip>
+          </div>
           <button className={classes.button} onClick={handlePostSubmit}>
             Submit
           </button>

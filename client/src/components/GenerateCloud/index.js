@@ -33,8 +33,16 @@ const useStyles = makeStyles((theme) => ({
     // justifyContent: "center",
     alignItems: "center",
     margin: "auto",
-    padding: "10 px"
-  }
+    padding: "10 px",
+  },
+  instabutton: {
+    marginTop: 5,
+    marginBottom: 10,
+    backgroundColor: "transparent",
+    border: "none",
+    color: "rgb(143, 137, 137)",
+    fontFamily: "Libre Baskervvile , serif",
+  },
 }));
 
 function generateCloud() {
@@ -74,6 +82,7 @@ function generateCloud() {
       })
       .catch((err) => console.log(err));
   }
+
   return (
     <div>
       <Box className={classes.buttonBox}>
@@ -86,21 +95,29 @@ function generateCloud() {
           <br />
           Cloud
         </Button>
+        <Button className={classes.instabutton}>
+          <a
+            href="https://www.instagram.com/accounts/login/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Share on Instagram!
+          </a>
+        </Button>
       </Box>
-      <div ref={ref}>
-        <div className={classes.generatedCloud}>{ReactHtmlParser(svgFile)}</div>
+      <div ref={ref} className={classes.generatedCloud}>
+        {ReactHtmlParser(svgFile)}
       </div>
 
       <Box className={classes.pdfBtn}>
         <Pdf targetRef={ref} filename="your-word-cloud.pdf">
           {({ toPdf }) => (
-            <button onClick={toPdf} rel="noopener noreferrer" target="_blank" >
+            <button onClick={toPdf} rel="noopener noreferrer" target="_blank">
               Download Image to pdf
             </button>
           )}
         </Pdf>
       </Box>
-      
     </div>
   );
 }
