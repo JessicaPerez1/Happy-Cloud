@@ -30,7 +30,7 @@ const useStyles = makeStyles({
     color: "darkgray",
   },
   question: {
-    fontSize: 28,
+    fontSize: "calc(18px + 1vw)",
     fontWeight: "bold",
     color: "#3B3C3C",
     fontFamily: "'Baskervville', serif",

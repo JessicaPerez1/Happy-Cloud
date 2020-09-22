@@ -34,13 +34,14 @@ function Profile() {
     <div>
       <Nav />
       <Prompt />
+      
+      {/* <HistoryList /> */}
+      <Calendar />
       <Button onClick={handleCloudPage} style={buttonStyle}>
         <Link to="/cloud" stlye={linkStyle}>
           Click Here for your WordCloud
         </Link>
       </Button>
-      {/* <HistoryList /> */}
-      <Calendar />
     </div>
   );
 }
