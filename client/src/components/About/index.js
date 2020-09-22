@@ -30,7 +30,7 @@ const useStyles = makeStyles({
   },
   paragraph: {
     fontSize: "1.5rem",
-    fontFamily: "'Nunito', sans-serif",
+    fontFamily: "'Libre Baskervville', serif",
     color: "#463f3a",
   },
 });

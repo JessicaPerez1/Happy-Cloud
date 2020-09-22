@@ -6,16 +6,16 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundImage:
-            "url(https://images.unsplash.com/photo-1515595967223-f9fa59af5a3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60)",
-        backgroundSize: "cover",
-        backgroundRepeat: "repeat",
-        width: "100%",
+          "url(https://images.unsplash.com/photo-1515595967223-f9fa59af5a3b?ixlib)",
+        backgroundSize: "auto",
+        backgroundRepeat: "no-repeat",
+        width: "auto",
         height: "auto",
-        // flexGrow: 1,
-        // margin: 0,
-    },
+        flexGrow: 1,
+        margin: "0",
+      },
     div: {
-        height: "600px",
+        // height: "600px",
     },
 }));
 
@@ -25,7 +25,7 @@ const Login = () => {
         <div className={classes.root}>
             <HomeNav />
             <About />
-            <div className={classes.div}></div>
+            {/* <div className={classes.div}></div> */}
         </div>
     );
 };

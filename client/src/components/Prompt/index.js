@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     minWidth: 300,
     margin: "1rem",
     padding: "1rem",
-    fontFamily: "'Nunito', sans-serif",
+    fontFamily: "'Baskervville', serif",
   },
   title: {
     fontSize: 12,
@@ -33,6 +33,7 @@ const useStyles = makeStyles({
     fontSize: 28,
     fontWeight: "bold",
     color: "#3B3C3C",
+    fontFamily: "'Baskervville', serif",
   },
   textfield: {
     width: "50%",
@@ -51,7 +52,7 @@ const useStyles = makeStyles({
     borderRadius: "0.4rem",
     fontSize: "1rem",
     marginTop: "1rem",
-    fontFamily: "'Nunito', sans-serif",
+    fontFamily: "'Baskervville', serif",
     color: "rgb(143, 137, 137)"
   },
 });

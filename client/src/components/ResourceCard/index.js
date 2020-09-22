@@ -15,15 +15,18 @@ const useStyles = makeStyles((theme) => ({
     padding: "1rem",
     minWidth: 300,
     flexGrow: 1,
+    fontFamily: "'Baskervville', serif",
   },
   title: {
     fontSize: 21,
     color: "darkGray",
+    fontFamily: "'Baskervville', serif",
   },
   subtitle: {
     fontSize: 28,
     fontWeight: "bold",
     color: "#3B3C3C",
+    fontFamily: "'Baskervville', serif",
   },
   media: {
     height: 400,

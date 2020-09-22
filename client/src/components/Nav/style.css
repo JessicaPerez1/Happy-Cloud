@@ -15,7 +15,8 @@
 #resources {
   font-size: 15px;
   color: rgb(143, 137, 137);
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-family: 'Baskervville', serif;
   /* justify-content: right; */
 }
 
