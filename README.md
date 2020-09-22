@@ -2,32 +2,33 @@
 
 ## Description
 
+Studies show, actively considering what you are grateful for and writing it down leads to a more fullfilling and happy life. We created a space for you to track your daily gratitude where you can easily reflect on past gratefulness.
+After signing up/loging in, the user is able to enter a word every day, which will populate their calendar on the profile page.
+The user is then able to click on the "generate cloud button" to get their personalized cloud, that they can also download as a PDF file to share it easily on social media platforms or print it!
+
 ## Table of Contents
 
-1. [Installation](#Installation)
-2. [Usage](#Usage)
-3. [Github repository and Heroku deployed app link](#Github-repository-Heroku-deployed-link)
-4. [App-screenshots](#App-screenshots)
-5. [Contributors and Questions](#Contributors-Questions)
-
-## Installation
-
--
+1. [Usage](#Usage)
+2. [Github repository and Heroku deployed app link](#Github-repository-Heroku-deployed-link)
+3. [App-screenshots](#App-screenshots)
+4. [Contributors and Questions](#Contributors-Questions)
 
 ## Usage
 
--
+- Click on the deployed app link or scan the QR code below and get started!
+  ![Happy Cloud QR Code](client/src/images/happy-cloud-qr-code.png)
 
 ### Github-repository-Heroku-deployed-link
 
-- Github repository:
-  [Github repository](https://github.com/JessicaPerez1/Project-3.git)
-- Heroku Deployed link:
-  [Heroku deployed app link](https://radiant-scrubland-65764.herokuapp.com/)
+- [Github repository](https://github.com/JessicaPerez1/Project-3.git)
+- [Heroku deployed app](https://radiant-scrubland-65764.herokuapp.com/)
+- [Presentation](https://bit.ly/2HfHnay)
 
 ### App-screenshots
 
-![Happy Cloud screenshot]()
+![Home Page](client/src/images/homepage.png)
+![Profile Page](client/src/images/profile-page.png)
+![Cloud](client/src/images/cloud.png)
 
 ### Contributors-Questions
 
