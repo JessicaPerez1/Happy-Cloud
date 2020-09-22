@@ -4,15 +4,14 @@ export default {
   // Gets all posts
   getPosts: function (userId) {
     const id = userId;
-    console.log("API CONSOLE LOG", id);
+
     const header = {
       headers: {
         Authorization:
           "Bearer " + JSON.parse(localStorage.getItem("data"))[0].token,
       },
     };
-    console.log(id);
-    console.log(header);
+
     return axios.get("/api/user/" + id + "/posts", header);
   },
 
@@ -32,9 +31,7 @@ export default {
           "Bearer " + JSON.parse(localStorage.getItem("data"))[0].token,
       },
     };
-    console.log("id", userId);
-    console.log("postdata", post);
-    console.log("token", header);
+
     return axios.post("/api/posts", params, header);
   },
   // Saves/edit a post to the database

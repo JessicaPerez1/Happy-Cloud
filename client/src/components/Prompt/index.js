@@ -72,16 +72,13 @@ function Prompt() {
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const info = event.target.value;
-    console.log(info);
   }
   // When the form is submitted, use API method to save the users data
   // Then reload info from the database
   function handlePostSubmit(event) {
     const getPosts = () => {
       const user = JSON.parse(localStorage.getItem("data"));
-      console.log(user);
       const userId = user[0].id;
-      console.log(userId);
       dispatch({ type: LOADING });
 
       API.getPosts(userId)
@@ -96,17 +93,13 @@ function Prompt() {
     };
 
     event.preventDefault();
-    // dispatch({ type: LOADING });
-    console.log("This button was clicked");
-    // console.log(event.target.value);
-    // addPost();
+
     const user = JSON.parse(localStorage.getItem("data"));
-    console.log(user[0].id);
+
     const userId = user[0].id;
-    console.log("postref", postRef.current.value);
+
     const inputLowerCase = postRef.current.value.toLowerCase();
-    console.log(inputLowerCase);
-    console.log("This is user is ajax call", userId);
+
     API.createPost(userId, inputLowerCase)
       .then((result) => {
         dispatch({

@@ -56,13 +56,10 @@ const Signup = () => {
       email: regEmailRef.current.value,
       password: regPasswordRef.current.value,
     });
-
-    console.log(data);
   };
 
   const handleSignup = (e) => {
     e.preventDefault();
-    console.log("you've signed up");
     doSignup();
     history.push("/login");
   };
