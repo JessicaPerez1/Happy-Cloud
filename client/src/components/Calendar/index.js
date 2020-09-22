@@ -125,7 +125,7 @@ export default function Calendar() {
   return (
     <div className="calendar">
       <Button className={classes.button} onClick={setCalendar}>
-        Add Post/View Calendar
+        Refresh Calendar
       </Button>
       {/* {state.posts.map((post) => ( */}
       <FullCalendar
